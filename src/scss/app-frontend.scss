@@ -1,0 +1,103 @@
+
+#back {
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  color: white;
+}
+
+nav {
+  position: relative;
+  display: block;
+  flex-grow: 1;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  list-style:none;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+#cloud, #enterprise, #digital {
+  position: absolute;
+  width: 33.33333%;
+  height: 100vh;
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  float: left;
+  display: block;
+  overflow: hidden;
+  animation-duration: 5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+#cloud{
+  left: 0;
+  background-color: red;
+}
+#enterprise {
+  left: 33.33333%;
+  right: 33.33333%;
+  background-color: blue;
+}
+#digital {
+  right: 0;
+  background-color: green;
+}
+
+
+#cloud.cloud--is-active,
+#enterprise.enterprise--is-active,
+#digital.digital--is-active {
+  animation-name: expand;
+}
+@keyframes expand {
+  0% {width: 33.33333%;z-index: 2;}
+  100% {width: 100%;z-index: 2;}
+}
+
+
+#cloud.cloud--is-hidden,
+#enterprise.enterprise--is-hidden,
+#digital.digital--is-hidden {
+  animation-name: collapse;
+}
+@keyframes collapse {
+  0% {width: 100%;z-index: 1;}
+  100% {width: 33.33333%;z-index: 1;}
+}
+
+
+#enterprise.enterprise--is-shown,
+#digital.digital--is-shown,
+#cloud.cloud--is-shown {
+  animation-name: collapseback;
+}
+@keyframes collapseback {
+  0% {width: 100%;}
+  100% {width: 33.33333%;}
+}
+
+
+#enterprise.enterprise--is-notshown,
+#digital.digital--is-notshown,
+#cloud.cloud--is-notshown {
+  animation-name: expandback;
+}
+@keyframes expandback {
+  0% {width: 0%;}
+  100% {width: 33.33333%;}
+}
+
+
+
+
+#cloud.link,
+#enterprise.link,
+#digital.link {width: 0%}
+
+#cloud.link--open,
+#enterprise.link--open,
+#digital.link--open {width: 100%; left: 0; right: 0;}

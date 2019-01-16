@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "symbols";
+  src: url('../fonts/symbols.eot');
+  src: url('../fonts/symbols.eot?#iefix') format('eot'),
+    url('../fonts/symbols.woff2') format('woff2'),
+    url('../fonts/symbols.woff') format('woff'),
+    url('../fonts/symbols.ttf') format('truetype'),
+    url('../fonts/symbols.svg#symbols') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.s:before {
+  display: inline-block;
+  font-family: "symbols";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.s-lg {
+  font-size: 1.3333333333333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.s-2x { font-size: 2em; }
+.s-3x { font-size: 3em; }
+.s-4x { font-size: 4em; }
+.s-5x { font-size: 5em; }
+.s-fw {
+  width: 1.2857142857142858em;
+  text-align: center;
+}
+
+.s-chevron-down:before { content: "\EA01" }
+.s-chevron-left:before { content: "\EA02" }
+.s-close:before { content: "\EA03" }
+.s-chevron-right:before { content: "\EA04" }
+.s-close1:before { content: "\EA05" }
+.s-cuater:before { content: "\EA06" }
+.s-facebook:before { content: "\EA07" }
+.s-instagram:before { content: "\EA08" }
+.s-mathew-plus:before { content: "\EA09" }
+.s-message:before { content: "\EA0A" }
+.s-mobile:before { content: "\EA0B" }
+.s-placeholder:before { content: "\EA0C" }
+.s-plus:before { content: "\EA0D" }
+.s-question:before { content: "\EA0E" }
+.s-search:before { content: "\EA0F" }
+.s-shopping-cart:before { content: "\EA10" }
+.s-youtube:before { content: "\EA11" }
+.s-twitter:before { content: "\EA12" }

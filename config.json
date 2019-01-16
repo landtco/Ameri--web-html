@@ -1,0 +1,11 @@
+{
+  "zipname" : "travis.zip",
+  "sftp" : {
+    "host" : "207.154.194.199",
+    "user" : "root",
+    "port" : 22,
+    "pass" : "AndresSpecialPlace2",
+    "remotePath" : "/var/www/html/works/ameri/triangle-test"
+  },
+  "sketchFile" : "src/icons/icons.sketch"
+}
