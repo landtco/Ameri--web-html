@@ -10,7 +10,7 @@ var currentTrigger = null;
 function scrollToAnchor(sectionId){
     var aTag = $("#"+ sectionId );
     console.log(sectionId);
-    $('html,body').animate({scrollTop: aTag.offset().top},timingPrimary );
+    $('html,body').animate({scrollTop: aTag.offset().top},timingThird );
 }
 
 //smoothState.js
@@ -89,7 +89,8 @@ $(function(){
             $("#enterprise").addClass("enterprise--notshown");
           }
         });
-          SimulatorDOM(); //we call all we want to do inside the DOM
+          SimulatorDOM();
+           //we call all we want to do inside the DOM
       }
     }
   },
