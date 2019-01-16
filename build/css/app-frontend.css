@@ -2,7 +2,8 @@
   position: absolute;
   top: 50px;
   left: 30px;
-  color: white; }
+  color: white;
+  z-index: 3; }
 
 nav {
   position: relative;
@@ -41,7 +42,7 @@ nav {
   background-color: blue; }
 
 #digital {
-  right: 0;
+  right: 0 !important;
   background-color: green; }
 
 #cloud.cloud--is-active,
@@ -52,54 +53,53 @@ nav {
 @keyframes expand {
   0% {
     width: 33.33333%;
-    z-index: 2; }
+    z-index: 3; }
   100% {
     width: 100%;
-    z-index: 2; } }
+    left: 0;
+    right: 0;
+    z-index: 3; } }
 
-#cloud.cloud--is-hidden,
-#enterprise.enterprise--is-hidden,
-#digital.digital--is-hidden {
-  animation-name: collapse; }
-
-@keyframes collapse {
-  0% {
-    width: 100%;
-    z-index: 1; }
-  100% {
-    width: 33.33333%;
-    z-index: 1; } }
-
-#enterprise.enterprise--is-shown,
-#digital.digital--is-shown,
-#cloud.cloud--is-shown {
+#cloud.cloud--is-shown,
+#digital.digital--is-shown {
   animation-name: collapseback; }
 
 @keyframes collapseback {
   0% {
-    width: 100%; }
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3; }
   100% {
-    width: 33.33333%; } }
+    width: 33.33333%;
+    left: auto;
+    right: auto;
+    z-index: 3; } }
+
+#enterprise.enterprise--is-shown {
+  animation-name: enterprisecollapseback; }
+
+@keyframes enterprisecollapseback {
+  0% {
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3; }
+  100% {
+    width: 33.33333%;
+    left: 33.33333%;
+    right: 33.33333%;
+    z-index: 3; } }
 
 #enterprise.enterprise--is-notshown,
 #digital.digital--is-notshown,
 #cloud.cloud--is-notshown {
-  animation-name: expandback; }
-
-@keyframes expandback {
-  0% {
-    width: 0%; }
-  100% {
-    width: 33.33333%; } }
-
-#cloud.link,
-#enterprise.link,
-#digital.link {
-  width: 0%; }
+  z-index: 1; }
 
 #cloud.link--open,
 #enterprise.link--open,
 #digital.link--open {
   width: 100%;
   left: 0;
-  right: 0; }
+  right: 0;
+  z-index: 2; }
