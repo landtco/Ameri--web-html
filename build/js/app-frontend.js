@@ -1,5 +1,5 @@
 //time variables
-var timingPrimary = 5000;
+var timingPrimary = 300;
 var timingSecondary = 600;
 var timingThird = 900;
 
@@ -10,7 +10,7 @@ var currentTrigger = null;
 function scrollToAnchor(sectionId){
     var aTag = $("#"+ sectionId );
     console.log(sectionId);
-    $('html,body').animate({scrollTop: aTag.offset().top},timingThird );
+    $('html,body').animate({scrollTop: aTag.offset().top},timingPrimary );
 }
 
 //smoothState.js
@@ -74,6 +74,7 @@ $(function(){
 
         $( "#back" ).click(function() {
           var returningID = $("#back").attr("class");
+          // console.log(returningID);
           $("#" + returningID).addClass(returningID + "--is-shown");
           if (returningID == "cloud") {
             $("#digital").addClass("digital--is-notshown");

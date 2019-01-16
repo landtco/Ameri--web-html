@@ -26,10 +26,9 @@ nav {
   color: white;
   font-size: 60px;
   text-align: center;
-  float: left;
   display: block;
   overflow: hidden;
-  animation-duration: 5s;
+  animation-duration: 300ms;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   z-index: 1;
@@ -50,8 +49,7 @@ nav {
 
 
 #cloud.cloud--is-active,
-#enterprise.enterprise--is-active,
-#digital.digital--is-active {
+#enterprise.enterprise--is-active {
   animation-name: expand;
 }
 @keyframes expand {
@@ -59,30 +57,38 @@ nav {
   100% {width: 100%; left: 0; right: 0; z-index: 3;}
 }
 
+#digital.digital--is-active {
+  animation-name: digitalexpand;
+}
+@keyframes digitalexpand {
+  0% {width: 33.33333%; z-index: 3; right: 0;}
+  100% {width: 100%; right: 0; z-index: 3;}
+}
 
 
-#cloud.cloud--is-shown,
-#digital.digital--is-shown {
+
+#cloud.cloud--is-shown {
   animation-name: collapseback;
 }
 @keyframes collapseback {
-  0% {width: 100%; left: 0; right: 0; z-index: 3;}
+  0% {width: 100%; left: 0%; right: 0%; z-index: 3;}
   100% {width: 33.33333%;  left: auto; right: auto; z-index: 3;}
 }
+
 #enterprise.enterprise--is-shown {
-  animation-name: enterprisecollapseback;
+ animation-name: enterprisecollapseback;
 }
 @keyframes enterprisecollapseback {
-  0% {width: 100%; left: 0; right: 0; z-index: 3;}
-  100% {width: 33.33333%; left: 33.33333%; right: 33.33333%; z-index: 3;}
+ 0% {width: 100%; left: 0; right: 0; z-index: 3;}
+ 100% {width: 33.33333%; left: 33.33333%; right: 33.33333%; z-index: 3;}
 }
 
-
-
-#enterprise.enterprise--is-notshown,
-#digital.digital--is-notshown,
-#cloud.cloud--is-notshown {
-  z-index: 1;
+#digital.digital--is-shown {
+  animation-name: digitalcollapseback;
+}
+@keyframes digitalcollapseback {
+  0% {width: 100%; left: 0%; right: 0%; z-index: 3;}
+  100% {width: 33.33333%; left: 66.66666%; right: 0%; z-index: 3;}
 }
 
 
