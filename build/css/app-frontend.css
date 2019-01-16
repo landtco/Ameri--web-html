@@ -1,5 +1,5 @@
 #back {
-  position: absolute;
+  position: fixed;
   top: 50px;
   left: 30px;
   color: white;
@@ -123,3 +123,29 @@ nav {
   left: 0;
   right: 0;
   z-index: 2; }
+
+.link, .link--open {
+  pointer-events: none; }
+
+.navigation {
+  position: fixed;
+  top: 45%;
+  left: 30px;
+  z-index: 100;
+  color: white; }
+
+.navigation ul {
+  list-style: none; }
+
+.navigation ul a {
+  display: block;
+  text-align: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 32px;
+  background-color: white;
+  margin-bottom: 10px; }
+
+.navigation ul a:hover,
+navigation ul a:active {
+  opacity: .6; }
