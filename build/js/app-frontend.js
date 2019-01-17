@@ -190,6 +190,4 @@ $(function(){
 
 });
 
-$( window ).resize(function() {
-  scrollMagicNavigation();
-});
+$(window).resize(function(){location.reload();});
