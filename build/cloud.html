@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/app-frontend.css">
 </head>
-<body>
 
+<body>
+  <!-- start main container -->
   <div id="main">
 
     <div class="b--header">
@@ -29,15 +30,18 @@
 
     <div class="navigation">
       <ul>
-        <li><a class="trigger-section" trigger-to="one" href="#one">1</a></li>
-        <li><a class="trigger-section" trigger-to="two" href="#two">2</a></li>
-        <li><a class="trigger-section" trigger-to="three" href="#three">3</a></li>
+        <li><a class="trigger-section trigger-section-main" trigger-to="main" href="#main">0</a></li>
+        <li><a class="trigger-section trigger-section-one" trigger-to="articleOne" href="#articleOne"></a></li>
+        <li><a class="trigger-section trigger-section-two" trigger-to="articleTwo" href="#articleTwo"></a></li>
+        <li><a class="trigger-section trigger-section-three" trigger-to="articleThree" href="#articleThree"></a></li>
+        <li><a class="trigger-section trigger-section-three" trigger-to="articleFour" href="#articleFour"></a></li>
       </ul>
     </div>
 
+    <!-- start bg section -->
     <section class="bg-third">
 
-      <article id="one" class="b--article b--article-trigger">
+      <article id="articleOne" class="b--article b--article-trigger">
 
         <div class="b--background-items bg-image"></div>
 
@@ -65,7 +69,7 @@
 
       </article>
 
-      <article id="two" class="b--article b--article-trigger">
+      <article id="articleTwo" class="b--article b--article-trigger">
 
         <div class="b--background-items bg-image"></div>
 
@@ -93,7 +97,7 @@
 
       </article>
 
-      <article id="one" class="b--article b--article-trigger">
+      <article id="articleThree" class="b--article b--article-trigger">
 
         <div class="b--background-items bg-image"></div>
 
@@ -121,7 +125,7 @@
 
       </article>
 
-      <article id="two" class="b--article b--article-trigger">
+      <article id="articleFour" class="b--article b--article-trigger">
 
         <div class="b--background-items bg-image"></div>
 
@@ -149,9 +153,9 @@
 
       </article>
 
-    </section>
+    </section><!-- end bg section -->
 
-  </div>
+  </div><!-- end main container -->
 
 
   <script src="js/jquery.js"></script>
