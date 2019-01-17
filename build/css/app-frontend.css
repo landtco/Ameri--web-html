@@ -163,6 +163,7 @@ nav {
 
 .navigation {
   position: fixed;
+  display: none;
   top: 45%;
   left: 30px;
   z-index: 100;
