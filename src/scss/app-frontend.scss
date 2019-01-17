@@ -6,6 +6,7 @@ $color-fourth: #B0AFB1; //footer background
 $color-fifth: #151517; //footer background
 $color-sixth: #F6F6F6; //light background
 $color-seventh: rgba(0,0,0,0.47); //overlay image
+$color-eighth: #FFFFFF; //overlay image
 
 // vars fonts
 
@@ -24,9 +25,11 @@ $color-seventh: rgba(0,0,0,0.47); //overlay image
 
 
 // general rules
-a:focus {
-  outline: none;
-}
+a:focus {outline: none;}
+
+img {max-width: 100%;}
+
+.bg-third {background-color: $color-third;}
 
 // overwrite bootstrap
 .btn {
@@ -51,6 +54,7 @@ a:focus {
 
 }
 
+// header
 .b--header {
   position: fixed;
   top: 50px;
@@ -97,7 +101,10 @@ nav {
 }
 #cloud{
   left: 0;
-  background-color: red;
+  background-image: url('../@img_extra/cloud.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 #enterprise {
   left: 33.33333%;
@@ -195,5 +202,19 @@ nav {
   }
   &.navigation--is-active{
     display:block
+  }
+}
+
+.b--article {
+  padding-top: 124px;
+  padding-bottom: 126px;
+  .b--info {
+    &__title {
+      color: $color-primary;
+    }
+    &__content {
+      color: $color-eighth;
+    }
+
   }
 }
