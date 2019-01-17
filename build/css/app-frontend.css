@@ -29,6 +29,8 @@ img {
   background-color: #1C1D1F; }
 
 .btn--primary {
+  font-family: "Avenir-Black", Arial, Sans-Serif;
+  font-size: 17px;
   font-weight: 400;
   color: #AECBE1;
   border: 1px solid #AECBE1;
@@ -43,16 +45,27 @@ img {
 
 .b--header {
   position: fixed;
-  top: 50px;
-  left: 30px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  padding-top: 71px;
+  padding-left: 66px;
+  vertical-align: middle;
   color: white;
-  z-index: 3; }
-  .b--header #back {
+  z-index: 10; }
+  .b--header .brand {
     display: inline-block;
-    vertical-align: middle; }
-  .b--header h1 {
+    height: 71px;
+    padding-top: 18px;
+    padding-right: 30px;
+    border-right: 2px solid #D8D8D8; }
+  .b--header h2 {
     display: inline-block;
-    vertical-align: middle; }
+    font-family: "Avenir-Book", Arial, Sans-Serif;
+    font-size: 25px;
+    line-height: 76px;
+    padding-left: 30px; }
 
 nav {
   position: relative;
@@ -65,6 +78,16 @@ nav {
   list-style: none;
   vertical-align: middle;
   box-sizing: border-box; }
+  nav a {
+    font-family: "Avenir-Book", Arial, Sans-Serif; }
+    nav a h1 {
+      font-size: 50px;
+      text-transform: uppercase;
+      margin-bottom: 30px; }
+    nav a h2 {
+      font-size: 25px; }
+  nav a:hover {
+    text-decoration: none; }
   nav #cloud, nav #enterprise, nav #digital {
     position: absolute;
     padding-top: 41vh;
@@ -83,15 +106,21 @@ nav {
     left: 0;
     background-image: url("../@img_extra/cloud.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: left top;
     background-size: cover; }
   nav #enterprise {
     left: 33.33333%;
     right: 33.33333%;
-    background-color: blue; }
+    background-image: url("../@img_extra/enterprise.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover; }
   nav #digital {
     right: 0 !important;
-    background-color: green; }
+    background-image: url("../@img_extra/digital.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover; }
   nav #cloud.cloud--is-active,
   nav #enterprise.enterprise--is-active {
     animation-name: expand; }
@@ -197,6 +226,15 @@ nav {
   padding-top: 124px;
   padding-bottom: 126px; }
   .b--article .b--info__title {
-    color: #A2CCE2; }
+    font-family: "Avenir-Book", Arial, Sans-Serif;
+    color: #A2CCE2;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 40px; }
   .b--article .b--info__content {
-    color: #FFFFFF; }
+    font-family: "Avenir-Book", Arial, Sans-Serif;
+    color: #FFFFFF;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    line-height: 30px;
+    margin-bottom: 40px; }

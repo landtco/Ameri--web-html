@@ -3,26 +3,51 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Hola</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>Ameri100</title>
     <link rel="icon" href="img/favico/icon.png">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/app-frontend.css">
 </head>
 <body>
+  <!-- start main container -->
   <div id="main">
-    <a id="back" href="#"><img src="img/ameri.png"/></a>
-    <nav>
-      <a id="cloud" href="andres-timeline.html">cloud</a>
-      <a id="enterprise" href="coco.html">enterprise</a>
-      <a id="digital" href="page-3.html">digital</a>
-    </nav>
-  </div>
+
+    <!-- start header brand -->
+    <div class="b--header">
+      <div class="container-fluid">
+        <div class="row">
+          <a id="back" class="brand">
+            <img src="img/ameri.png"/>
+          </a>
+          <h2>Specialized SAP® and Google cloud solutions</h2>
+        </div>
+      </div>
+    </div><!-- end header brand -->
+
+    <!-- start main navigation -->
+    <nav class="nav-home">
+      <a id="cloud" href="cloud.html">
+        <h1>Cloud</h1>
+        <h2>Leverage the low cost</br>flexibility of cloud</br>computing.</h2>
+      </a>
+      <a id="enterprise" href="coco.html">
+        <h1>Enterprise</h1>
+        <h2>Accelerate your move</br>to an agile operating</br>model.</h2>
+      </a>
+      <a id="digital" href="page-3.html">
+        <h1>Digital</h1>
+        <h2>Unlock the full</br>potential of your</br>application portfolio.</h2>
+      </a>
+    </nav><!-- end main navigation -->
+
+  </div><!-- end main container -->
 
   <script src="js/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="js/jquery.smoothState.js"></script>
+  <script src="js/scrollMagic.js"></script>
+  <script src="js/debuggers.js"></script>
   <script src="js/app-frontend.js"></script>
 
 </body>
