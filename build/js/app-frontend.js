@@ -167,7 +167,7 @@ $(function(){
         var inside = currentTrigger.attr("id");
         $( "#back" ).click(function() {
            $('html, body').animate({scrollTop:0}, 3000);
-          var returningID = $("#back").attr("class");
+          var returningID = $("#back").attr("data-alt");
           // console.log(returningID);
           $("#" + returningID).addClass(returningID + "--is-shown");
           if (returningID == "cloud") {
