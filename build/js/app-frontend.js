@@ -2,9 +2,10 @@
 var timingPrimary = 300;
 var timingSecondary = 600;
 var timingThird = 900;
-
 //we initialize currentTrigger to null
 var currentTrigger = null;
+//scrollMagic instance
+var controller = new ScrollMagic.Controller();
 
 //scroll to section function defined here:
 function scrollToAnchor(sectionId){
@@ -13,18 +14,80 @@ function scrollToAnchor(sectionId){
     $('html,body').animate({scrollTop: aTag.offset().top},timingThird );
 }
 
+function scrollMagicNavigation(){
+  var oneHeight = $("#articleOne").height();
+  var twoHeight = $("#articleTwo").height();
+  var threeHeight = $("#articleThree").height();
+
+  new ScrollMagic.Scene({triggerElement: "#articleOne",duration: oneHeight, triggerHook: 0.4,
+  })
+  .on("enter", function (e) {
+      $('.trigger-section-one').addClass('trigger-section--is-active');
+      $('.navigation').addClass('navigation--is-active');
+  })
+  .on("leave", function (e) {
+      if (e.scrollDirection == 'REVERSE') {
+            $('.navigation').removeClass('navigation--is-active');
+            $('.trigger-section-one').removeClass('trigger-section--is-active');
+      }
+  })
+  .addIndicators('por aca!')
+  .addTo(controller); // assign the scene to the controller
+
+  new ScrollMagic.Scene({triggerElement: "#articleTwo",duration: oneHeight, triggerHook: 0.4,
+  })
+  .on("enter", function (e) {
+        $('.trigger-section-one').removeClass('trigger-section--is-active');
+        $('.trigger-section-two').addClass('trigger-section--is-active');
+  })
+  .on("leave", function (e) {
+      if (e.scrollDirection == 'REVERSE') {
+          $('.trigger-section-two').removeClass('trigger-section--is-active');
+      }
+  })
+  .addIndicators('por aca!')
+  .addTo(controller); // assign the scene to the controller
+
+  new ScrollMagic.Scene({triggerElement: "#articleThree",duration: oneHeight, triggerHook: 0.4,
+  })
+  .on("enter", function (e) {
+       $('.trigger-section-two').removeClass('trigger-section--is-active');
+       $('.trigger-section-three').addClass('trigger-section--is-active');
+
+  })
+  .on("leave", function (e) {
+    if (e.scrollDirection == 'REVERSE') {
+       $('.trigger-section-three').removeClass('trigger-section--is-active');
+    }
+  })
+  .addIndicators('por aca!')
+  .addTo(controller); // assign the scene to the controller
+}
+
+$(".trigger-section").click(function(e) {
+  e.preventDefault();
+  var triggerID = $(this).attr("trigger-to");
+  console.log(triggerID);
+  scrollToAnchor(triggerID);
+});
+
 //smoothState.js
 $(function(){
   'use strict';
 
+    scrollMagicNavigation();
+
+    $(window).scroll(function() {
+				if ($(".b--header").offset().top > 650) {
+						$(".b--header").addClass("b--header--is-scrolled");
+				} else {
+						$(".b--header").removeClass("b--header--is-scrolled");
+				}
+		});
+
+
   //everything we want to do when the DOM is ready should be included here
-  function SimulatorDOM() {
-    $(".trigger-section").click(function(e) {
-      e.preventDefault();
-      var triggerID = $(this).attr("trigger-to");
-      scrollToAnchor(triggerID);
-    });
-  }
+
 
   //setting for our SmoothState
   var options = {
@@ -62,7 +125,6 @@ $(function(){
         smoothState.restartCSSAnimations();
       }
     },
-
     onReady: {
       duration: 0,
       render: function ($container, $newContent) {
@@ -71,8 +133,8 @@ $(function(){
         // inject the new content
         $container.html($newContent);
         var inside = currentTrigger.attr("id");
-
         $( "#back" ).click(function() {
+           $('html, body').animate({scrollTop:0}, 3000);
           var returningID = $("#back").attr("class");
           // console.log(returningID);
           $("#" + returningID).addClass(returningID + "--is-shown");
@@ -89,10 +151,13 @@ $(function(){
             $("#enterprise").addClass("enterprise--notshown");
           }
         });
-          SimulatorDOM();
-           //we call all we want to do inside the DOM
       }
     }
   },
   smoothState = $('#main').smoothState(options).data('smoothState');
+
+});
+
+$( window ).resize(function() {
+  scrollMagicNavigation();
 });
