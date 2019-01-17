@@ -182,3 +182,5 @@ nav {
         opacity: .6; }
       .navigation ul a.trigger-section--is-active {
         background-color: #A2CCE2; }
+  .navigation.navigation--is-active {
+    display: block; }
