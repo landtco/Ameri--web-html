@@ -1,11 +1,72 @@
+// vars colors
+$color-primary: #A2CCE2; //light blue
+$color-secondary: #0A3378; //dark blue
+$color-third: #1C1D1F; //dark background
+$color-fourth: #B0AFB1; //footer background
+$color-fifth: #151517; //footer background
+$color-sixth: #F6F6F6; //light background
+$color-seventh: rgba(0,0,0,0.47); //overlay image
 
-#back {
+// vars fonts
+
+
+
+
+
+//fonts
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('../fonts/Gotham-Book.woff') format('woff'),
+        url('../fonts/Gotham-Book.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+// general rules
+a:focus {
+  outline: none;
+}
+
+// overwrite bootstrap
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+// buttons
+.btn--primary {
+  font-weight: 400;
+  color: #AECBE1;
+  border: 1px solid #AECBE1;
+  padding: 10px 25px;
+}
+.btn--primary:hover {
+  color: #AECBE1;
+}
+.btn--primary:hover::after {
+  content:"";
+  position: absolute;
+
+}
+
+.b--header {
   position: fixed;
   top: 50px;
   left: 30px;
   color: white;
   z-index: 3;
+  #back {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  h1 {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
+
 
 nav {
   position: relative;
@@ -21,7 +82,7 @@ nav {
 }
 #cloud, #enterprise, #digital {
   position: absolute;
-  padding-top: 30%;
+  padding-top: 41vh;
   width: 33.33333%;
   height: 100vh;
   color: white;
@@ -113,20 +174,22 @@ nav {
   left: 30px;
   z-index: 100;
   color: white;
-}
-.navigation ul {
-  list-style: none;
-}
-.navigation ul a {
-  display: block;
-  text-align: center;
-  width: 16px;
-  height: 16px;
-  border-radius: 32px;
-  background-color: white;
-  margin-bottom: 10px;
-}
-.navigation ul a:hover,
-navigation ul a:active {
-  opacity: .6
+  ul {
+    list-style: none;
+    a {
+      display: block;
+      text-align: center;
+      width: 16px;
+      height: 16px;
+      border-radius: 32px;
+      background-color: white;
+      margin-bottom: 10px;
+      &:hover, &:active {
+        opacity: .6
+      }
+      &.trigger-section--is-active {
+        background-color: $color-primary;
+      }
+    }
+  }
 }
