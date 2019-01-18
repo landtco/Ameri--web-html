@@ -7,8 +7,20 @@
   src: url("../fonts/Avenir-Medium.ttf") format("truetype"); }
 
 @font-face {
+  font-family: 'AvenirNext-UltraLight';
+  src: url("../fonts/AvenirNext-UltraLight.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Avenir-Light';
+  src: url("../fonts/Avenir-Light.ttf") format("truetype"); }
+
+@font-face {
   font-family: 'Avenir-Book';
   src: url("../fonts/Avenir-Book.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Avenir-Heavy';
+  src: url("../fonts/Avenir-Heavy.ttf") format("truetype"); }
 
 @font-face {
   font-family: 'Avenir-Black';
@@ -32,18 +44,73 @@ img {
   background-color: #151517; }
 
 .btn {
-  font-family: "Avenir-Black", Arial, Sans-Serif;
-  font-size: 17px;
+  font-family: "Avenir-Heavy", Arial, Sans-Serif;
+  font-size: 16px;
   color: #A2CCE2;
-  letter-spacing: 0.05em; }
+  letter-spacing: 0.05em;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
+  .btn:hover {
+    color: #CBE3F1;
+    text-decoration: none; }
   .btn--primary {
+    position: relative;
     border: 1px solid #A2CCE2;
     padding: 10px 25px; }
-  .btn--primary:hover {
-    color: #A2CCE2; }
-  .btn--primary:hover::after {
-    content: "";
-    position: absolute; }
+    .btn--primary:hover {
+      background-color: rgba(162, 204, 226, 0.05); }
+    .btn--primary span:first-child,
+    .btn--primary span:last-child {
+      position: absolute;
+      display: inline-block;
+      width: 21px;
+      height: 21px;
+      border: solid #A2CCE2;
+      border-width: 0px 0px 0px 0px;
+      padding: 0px;
+      transform: scale(0.6);
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
+    .btn--primary span:first-child {
+      left: -5px;
+      bottom: -5px; }
+    .btn--primary span:last-child {
+      right: -5px;
+      top: -5px; }
+    .btn--primary:hover span:first-child {
+      transform: scale(1);
+      border-width: 0px 0px 5px 5px;
+      padding: 7px; }
+    .btn--primary:hover span:last-child {
+      transform: scale(1);
+      border-width: 5px 5px 0px 0px;
+      padding: 7px; }
+  .btn--link {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    padding-bottom: 5px; }
+    .btn--link::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      background-color: #A2CCE2;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+    .btn--link:hover::after {
+      transform: scaleX(1); }
 
 .b--header {
   position: fixed;
@@ -69,7 +136,7 @@ img {
     border-right: 2px solid #D8D8D8; }
   .b--header h2 {
     display: inline-block;
-    font-family: "Avenir-Book", Arial, Sans-Serif;
+    font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
     font-size: 25px;
     line-height: 76px;
     padding-left: 30px; }
@@ -91,14 +158,14 @@ nav {
   list-style: none;
   vertical-align: middle;
   box-sizing: border-box; }
-  nav a {
-    font-family: "Avenir-Book", Arial, Sans-Serif; }
-    nav a h1 {
-      font-size: 50px;
-      text-transform: uppercase;
-      margin-bottom: 30px; }
-    nav a h2 {
-      font-size: 25px; }
+  nav a h1 {
+    font-family: "Stellar-light", Arial, Sans-Serif;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 30px; }
+  nav a h2 {
+    font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
+    font-size: 25px; }
   nav a:hover {
     text-decoration: none; }
   nav #cloud, nav #enterprise, nav #digital {
@@ -248,12 +315,13 @@ nav {
     height: 100vh;
     top: 55px; }
   .b--article .b--front-items .b--info__title {
-    font-family: "Avenir-Book", Arial, Sans-Serif;
+    font-family: "Stellar-light", Arial, Sans-Serif;
     color: #A2CCE2;
     font-size: 35px;
+    text-transform: uppercase;
     margin-bottom: 40px; }
   .b--article .b--front-items .b--info__content, .b--article .b--front-items .b--info__foot {
-    font-family: "Avenir-Book", Arial, Sans-Serif;
+    font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
     color: #FFFFFF;
     font-size: 20px;
     letter-spacing: 0.05em;
@@ -291,7 +359,7 @@ nav {
   padding-top: 75px;
   padding-bottom: 68px; }
   .b--cta-primary h2 {
-    font-family: "Avenir-Black", Arial, Sans-Serif;
+    font-family: "Avenir-Heavy", Arial, Sans-Serif;
     color: #FFFFFF;
     font-size: 25px;
     text-transform: uppercase;

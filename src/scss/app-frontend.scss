@@ -11,8 +11,11 @@ $color-eighth: #FFFFFF; //overlay image
 // vars fonts
 $font-primary: 'Stellar-light', Arial, Sans-Serif;
 $font-secondary: 'Avenir-Medium', Arial, Sans-Serif;
-$font-third: 'Avenir-Book', Arial, Sans-Serif;
-$font-fourth: 'Avenir-Black', Arial, Sans-Serif;
+$font-third: 'AvenirNext-UltraLight', Arial, Sans-Serif;
+$font-fourth: 'Avenir-Heavy', Arial, Sans-Serif;
+$font-fifth: 'Avenir-Black', Arial, Sans-Serif;
+$font-sixth: 'Avenir-Book', Arial, Sans-Serif;
+$font-seventh: 'Avenir-Light', Arial, Sans-Serif;
 
 
 //fonts
@@ -25,8 +28,20 @@ $font-fourth: 'Avenir-Black', Arial, Sans-Serif;
     src: url('../fonts/Avenir-Medium.ttf') format('truetype');
 }
 @font-face {
+    font-family: 'AvenirNext-UltraLight';
+    src: url('../fonts/AvenirNext-UltraLight.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Light';
+    src: url('../fonts/Avenir-Light.ttf') format('truetype');
+}
+@font-face {
     font-family: 'Avenir-Book';
     src: url('../fonts/Avenir-Book.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'Avenir-Heavy';
+    src: url('../fonts/Avenir-Heavy.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Avenir-Black';
@@ -55,22 +70,84 @@ img {max-width: 100%;}
 // buttons
 .btn {
   font-family: $font-fourth;
-  font-size: 17px;
+  font-size: 16px;
   color: $color-primary;
   letter-spacing: 0.05em;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  &:hover {
+    color: #CBE3F1;
+    text-decoration: none;
+  }
   // button primary
   &--primary {
+    position: relative;
     border: 1px solid $color-primary;
     padding: 10px 25px;
+    &:hover {
+      background-color: rgba(162,204,226,0.05)
+    }
+    span:first-child,
+    span:last-child {
+      position: absolute;
+      display: inline-block;
+      width: 21px;
+      height: 21px;
+      border: solid $color-primary;
+      border-width: 0px 0px 0px 0px;
+      padding: 0px;
+      transform: scale(0.6);
+      -webkit-transition: all 0.2s ease-out;
+      -moz-transition: all 0.2s ease-out;
+      -ms-transition: all 0.2s ease-out;
+      -o-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
+    }
+    span:first-child {
+      left: -5px;
+      bottom: -5px;
+    }
+    span:last-child {
+      right: -5px;
+      top: -5px;
+    }
+    &:hover span:first-child {
+      transform: scale(1);
+      border-width: 0px 0px 5px 5px;
+      padding: 7px;
+    }
+    &:hover span:last-child {
+      transform: scale(1);
+      border-width: 5px 5px 0px 0px;
+      padding: 7px;
+    }
   }
-  &--primary:hover {
-    color: $color-primary;
-  }
-  &--primary:hover::after {
-    content:"";
-    position: absolute;
-
-
+  // button link
+  &--link {
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    padding-bottom: 5px;
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      background-color: $color-primary;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover::after {
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -128,13 +205,14 @@ nav {
   vertical-align: middle;
   box-sizing: border-box;
   a {
-    font-family: $font-third;
     h1 {
+      font-family: $font-primary;
       font-size: 50px;
       text-transform: uppercase;
       margin-bottom: 30px;
     }
     h2 {
+      font-family: $font-third;
       font-size: 25px;
     }
   }
@@ -273,9 +351,10 @@ nav {
   .b--front-items {
     .b--info {
       &__title {
-        font-family: $font-third;
+        font-family: $font-primary;
         color: $color-primary;
         font-size: 35px;
+        text-transform: uppercase;
         margin-bottom: 40px
       }
       &__content,
