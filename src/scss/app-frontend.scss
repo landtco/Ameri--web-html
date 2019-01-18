@@ -57,6 +57,7 @@ img {max-width: 100%;}
   font-family: $font-fourth;
   font-size: 17px;
   color: $color-primary;
+  letter-spacing: 0.05em;
   // button primary
   &--primary {
     border: 1px solid $color-primary;
@@ -85,11 +86,11 @@ img {max-width: 100%;}
   padding-left: 66px;
   vertical-align: middle;
   color: white;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   z-index: 10;
   .brand {
     display: inline-block;
@@ -277,14 +278,40 @@ nav {
         font-size: 35px;
         margin-bottom: 40px
       }
-      &__content {
+      &__content,
+      &__foot {
         font-family: $font-third;
         color: $color-eighth;
         font-size: 20px;
         letter-spacing: 0.05em;
         line-height: 30px;
-        margin-bottom: 40px
       }
+      &__content{
+        margin-bottom: 40px;
+      }
+      &__foot {
+        margin-top: 40px;
+        .btn {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .b--image-artwork {
+    position: relative;
+    z-index: 1;
+    &__top::after {
+      content: "";
+      position: absolute;
+      width: 285px;
+      width: calc(100% - 55%);
+      height: 285px;
+      height: calc(100% - 55%);
+      right: -15px;
+      top: -15px;
+      border-top: 15px solid $color-primary;
+      border-right: 15px solid $color-primary;
+      z-index: 0;
     }
   }
 }

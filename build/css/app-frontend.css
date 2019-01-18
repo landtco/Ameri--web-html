@@ -34,7 +34,8 @@ img {
 .btn {
   font-family: "Avenir-Black", Arial, Sans-Serif;
   font-size: 17px;
-  color: #A2CCE2; }
+  color: #A2CCE2;
+  letter-spacing: 0.05em; }
   .btn--primary {
     border: 1px solid #A2CCE2;
     padding: 10px 25px; }
@@ -54,11 +55,11 @@ img {
   padding-left: 66px;
   vertical-align: middle;
   color: white;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
   z-index: 10; }
   .b--header .brand {
     display: inline-block;
@@ -251,13 +252,33 @@ nav {
     color: #A2CCE2;
     font-size: 35px;
     margin-bottom: 40px; }
-  .b--article .b--front-items .b--info__content {
+  .b--article .b--front-items .b--info__content, .b--article .b--front-items .b--info__foot {
     font-family: "Avenir-Book", Arial, Sans-Serif;
     color: #FFFFFF;
     font-size: 20px;
     letter-spacing: 0.05em;
-    line-height: 30px;
+    line-height: 30px; }
+  .b--article .b--front-items .b--info__content {
     margin-bottom: 40px; }
+  .b--article .b--front-items .b--info__foot {
+    margin-top: 40px; }
+    .b--article .b--front-items .b--info__foot .btn {
+      font-size: 20px; }
+  .b--article .b--image-artwork {
+    position: relative;
+    z-index: 1; }
+    .b--article .b--image-artwork__top::after {
+      content: "";
+      position: absolute;
+      width: 285px;
+      width: calc(100% - 55%);
+      height: 285px;
+      height: calc(100% - 55%);
+      right: -15px;
+      top: -15px;
+      border-top: 15px solid #A2CCE2;
+      border-right: 15px solid #A2CCE2;
+      z-index: 0; }
 
 #articleOne .bg-image {
   background-image: url("../@img_extra/cloud-01-bg.png"); }

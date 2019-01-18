@@ -110,7 +110,7 @@ $(function(){
     scrollMagicNavigation();
 
     $(window).scroll(function() {
-				if ($(".b--header").offset().top > 100) {
+				if ($(".b--header").offset().top > 50) {
 						$(".b--header").addClass("b--header--is-scrolled");
 				} else {
 						$(".b--header").removeClass("b--header--is-scrolled");
