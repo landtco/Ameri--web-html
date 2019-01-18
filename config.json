@@ -5,7 +5,7 @@
     "user" : "root",
     "port" : 22,
     "pass" : "AndresSpecialPlace2",
-    "remotePath" : "/var/www/html/works/ameri/triangle-test"
+    "remotePath" : "/var/www/html/works/ameri/frameworkhtml"
   },
   "sketchFile" : "src/icons/icons.sketch"
 }
