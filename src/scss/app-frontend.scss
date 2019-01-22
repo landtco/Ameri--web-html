@@ -221,6 +221,7 @@ a, .btn {
     height: 35px;
     margin-top: 20px;
     cursor: pointer;
+    z-index: 22;
     span {
       position: relative;
       display: block;
@@ -249,12 +250,13 @@ a, .btn {
   }
   &__menu {
     position: fixed;
-    width: 33.33333%;
-    background-color: $color-third;
+    width: 0%;
     right: 0;
     top: 0;
     height: 100vh;
+    background-color: $color-third;
     overflow: hidden;
+    z-index: 21;
     -webkit-transition: width 0.5s cubic-bezier(0.9, 0, 0.33, 1) 0.2s;
     -moz-transition: width 0.5s cubic-bezier(0.9, 0, 0.33, 1) 0.2s;
     -ms-transition: width 0.5s cubic-bezier(0.9, 0, 0.33, 1) 0.2s;
@@ -272,6 +274,24 @@ a, .btn {
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
+    }
+  }
+  &__overlay {
+    display: none;
+  }
+  &--is-active {
+    &__menu {
+      width: 33.33333%;
+    }
+    &__overlay {
+      position: fixed;
+      display: block;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: 20;
     }
   }
 }

@@ -171,7 +171,8 @@ a, .btn {
     width: 54px;
     height: 35px;
     margin-top: 20px;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 22; }
     .b--header__trigger span {
       position: relative;
       display: block;
@@ -194,12 +195,13 @@ a, .btn {
       width: 39px; }
   .b--header__menu {
     position: fixed;
-    width: 33.33333%;
-    background-color: #1C1D1F;
+    width: 0%;
     right: 0;
     top: 0;
     height: 100vh;
+    background-color: #1C1D1F;
     overflow: hidden;
+    z-index: 21;
     -webkit-transition: width 0.5s cubic-bezier(0.9, 0, 0.33, 1) 0.2s;
     -moz-transition: width 0.5s cubic-bezier(0.9, 0, 0.33, 1) 0.2s;
     -ms-transition: width 0.5s cubic-bezier(0.9, 0, 0.33, 1) 0.2s;
@@ -217,6 +219,19 @@ a, .btn {
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%); }
+  .b--header__overlay {
+    display: none; }
+  .b--header--is-active__menu {
+    width: 33.33333%; }
+  .b--header--is-active__overlay {
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 20; }
 
 nav {
   position: relative;
