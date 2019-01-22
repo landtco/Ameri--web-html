@@ -107,6 +107,20 @@ $(".trigger-section").click(function(e) {
 $(function(){
   'use strict';
 
+
+
+  $( ".b--header__trigger" ).click(function(e) {
+    e.preventDefault();
+    $(".b--header").addClass("is-active");
+    $(".b--header__menu").addClass("is-active");
+    $(".b--header__trigger").addClass("is-active");
+    $(".b--header__overlay").addClass("is-active");
+  });
+
+  $(".b--header__overlay.is-active").click(function() {
+    console.log("hey");
+  });
+
     scrollMagicNavigation();
 
     $(window).scroll(function() {
