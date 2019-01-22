@@ -260,7 +260,7 @@ a, .btn {
       margin: 0;
       padding: 0;
       min-width: calc(35vw - 140px);
-      right: 70px;
+      right: 0px;
       top: 50%;
       list-style: none;
       opacity: 1;
@@ -268,11 +268,18 @@ a, .btn {
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
-      a {
-        font-family: $font-primary;
-        color: $color-eighth;
-        font-size: 37px;
+      -webkit-transition: right 1s ease-out;
+      -moz-transition: right 1s ease-out;
+      -ms-transition: right 1s ease-out;
+      transition: right 1s ease-out;
+      li {
         text-transform: uppercase;
+        line-height: 80px;
+        a {
+          font-family: $font-primary;
+          color: $color-eighth;
+          font-size: 37px;
+        }
       }
     }
   }
@@ -284,10 +291,13 @@ a, .btn {
     &__trigger.is-active {
       & span:nth-child(1) {transform: rotate(45deg);}
       & span:nth-child(2) {opacity: 0}
-      & span:nth-child(3) {transform: rotate(-45deg);}  
+      & span:nth-child(3) {transform: rotate(-45deg);}
     }
     &__menu.is-active {
       width: 33.33333%;
+      .b--header__menu-list {
+        right: 70px;
+      }
     }
     &__overlay.is-active {
       position: fixed;
