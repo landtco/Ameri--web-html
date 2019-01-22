@@ -195,7 +195,7 @@ a, .btn {
       width: 39px; }
   .b--header__menu {
     position: fixed;
-    width: 0%;
+    width: 33.3%;
     right: 0;
     top: 0;
     height: 100vh;
@@ -219,6 +219,11 @@ a, .btn {
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%); }
+      .b--header__menu-list a {
+        font-family: "Stellar-light", Arial, Sans-Serif;
+        color: #FFFFFF;
+        font-size: 37px;
+        text-transform: uppercase; }
   .b--header__overlay {
     display: none; }
   .b--header--is-active__menu {

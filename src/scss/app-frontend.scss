@@ -238,19 +238,13 @@ a, .btn {
         margin-bottom: 0;
       }
     }
-    &:hover span:nth-child(1) {
-      width: 45px;
-    }
-    &:hover span:nth-child(2) {
-      width: 27px;
-    }
-    &:hover span:nth-child(3) {
-      width: 39px;
-    }
+    &:hover span:nth-child(1) {width: 45px;}
+    &:hover span:nth-child(2) {width: 27px;}
+    &:hover span:nth-child(3) {width: 39px;}
   }
   &__menu {
     position: fixed;
-    width: 0%;
+    width: 33.3%;
     right: 0;
     top: 0;
     height: 100vh;
@@ -274,6 +268,12 @@ a, .btn {
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
+      a {
+        font-family: $font-primary;
+        color: $color-eighth;
+        font-size: 37px;
+        text-transform: uppercase;
+      }
     }
   }
   &__overlay {
