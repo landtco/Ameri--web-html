@@ -279,11 +279,17 @@ a, .btn {
   &__overlay {
     display: none;
   }
-  &.is-active {
-    &__menu {
+  // is active
+  & {
+    &__trigger.is-active {
+      & span:nth-child(1) {transform: rotate(45deg);}
+      & span:nth-child(2) {opacity: 0}
+      & span:nth-child(3) {transform: rotate(-45deg);}  
+    }
+    &__menu.is-active {
       width: 33.33333%;
     }
-    &__overlay {
+    &__overlay.is-active {
       position: fixed;
       display: block;
       width: 100vw;
