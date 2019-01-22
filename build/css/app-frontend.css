@@ -226,9 +226,9 @@ a, .btn {
         text-transform: uppercase; }
   .b--header__overlay {
     display: none; }
-  .b--header .b--header--is-active__menu {
+  .b--header.b--header--is-active__menu {
     width: 33.33333%; }
-  .b--header .b--header--is-active__overlay {
+  .b--header.b--header--is-active__overlay {
     position: fixed;
     display: block;
     width: 100vw;
