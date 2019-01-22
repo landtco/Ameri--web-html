@@ -214,34 +214,89 @@ a, .btn {
       right: 0px;
       top: 50%;
       list-style: none;
-      opacity: 1;
+      opacity: 0;
       -webkit-transform: translateY(-50%);
       -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
       transform: translateY(-50%);
-      -webkit-transition: right 1s ease-out;
-      -moz-transition: right 1s ease-out;
-      -ms-transition: right 1s ease-out;
-      transition: right 1s ease-out; }
+      -webkit-transition: all 0.5s ease-out 0.5s;
+      -moz-transition: all 0.5s ease-out 0.5s;
+      -ms-transition: all 0.5s ease-out 0.5s;
+      transition: all 0.5s ease-out 0.5s; }
       .b--header__menu-list li {
         text-transform: uppercase;
-        line-height: 80px; }
+        line-height: 80px;
+        -webkit-transform: translateX(100px);
+        -moz-transform: translateX(100px);
+        -ms-transform: translateX(100px);
+        transform: translateX(100px);
+        -webkit-transition: transform 0.3s ease-out;
+        -moz-transition: transform 0.3s ease-out;
+        -ms-transition: transform 0.3s ease-out;
+        transition: transform 0.3s ease-out; }
         .b--header__menu-list li a {
           font-family: "Stellar-light", Arial, Sans-Serif;
           color: #FFFFFF;
           font-size: 37px; }
   .b--header__overlay {
     display: none; }
-  .b--header__trigger.is-active span:nth-child(1) {
-    transform: rotate(45deg); }
-  .b--header__trigger.is-active span:nth-child(2) {
-    opacity: 0; }
-  .b--header__trigger.is-active span:nth-child(3) {
-    transform: rotate(-45deg); }
+  .b--header__trigger.is-active:hover span {
+    width: 54px;
+    transform: scale(0.5); }
+  .b--header__trigger.is-active {
+    transform: scale(1); }
+    .b--header__trigger.is-active span:nth-child(1) {
+      -webkit-transform: rotate(45deg) translate(11px, 11px);
+      -moz-transform: rotate(45deg) translate(11px, 11px);
+      -ms-transform: rotate(45deg) translate(11px, 11px);
+      transform: rotate(45deg) translate(11px, 11px); }
+    .b--header__trigger.is-active span:nth-child(2) {
+      opacity: 0; }
+    .b--header__trigger.is-active span:nth-child(3) {
+      -webkit-transform: rotate(-45deg) translate(11px, -11px);
+      -moz-transform: rotate(-45deg) translate(11px, -11px);
+      -ms-transform: rotate(-45deg) translate(11px, -11px);
+      transform: rotate(-45deg) translate(11px, -11px); }
   .b--header__menu.is-active {
     width: 33.33333%; }
     .b--header__menu.is-active .b--header__menu-list {
+      opacity: 1;
       right: 70px; }
+      .b--header__menu.is-active .b--header__menu-list li {
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        transform: translateX(0px); }
+        .b--header__menu.is-active .b--header__menu-list li:nth-child(1) {
+          -webkit-transition-delay: 500ms;
+          -moz-transition-delay: 500ms;
+          -o-transition-delay: 500ms;
+          transition-delay: 500ms; }
+        .b--header__menu.is-active .b--header__menu-list li:nth-child(2) {
+          -webkit-transition-delay: 550ms;
+          -moz-transition-delay: 550ms;
+          -o-transition-delay: 550ms;
+          transition-delay: 550ms; }
+        .b--header__menu.is-active .b--header__menu-list li:nth-child(3) {
+          -webkit-transition-delay: 600ms;
+          -moz-transition-delay: 600ms;
+          -o-transition-delay: 600ms;
+          transition-delay: 600ms; }
+        .b--header__menu.is-active .b--header__menu-list li:nth-child(4) {
+          -webkit-transition-delay: 650ms;
+          -moz-transition-delay: 650ms;
+          -o-transition-delay: 650ms;
+          transition-delay: 650ms; }
+        .b--header__menu.is-active .b--header__menu-list li:nth-child(5) {
+          -webkit-transition-delay: 700ms;
+          -moz-transition-delay: 700ms;
+          -o-transition-delay: 700ms;
+          transition-delay: 700ms; }
+        .b--header__menu.is-active .b--header__menu-list li:nth-child(6) {
+          -webkit-transition-delay: 750ms;
+          -moz-transition-delay: 750ms;
+          -o-transition-delay: 750ms;
+          transition-delay: 750ms; }
   .b--header__overlay.is-active {
     position: fixed;
     display: block;
