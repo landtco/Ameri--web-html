@@ -74,6 +74,7 @@ a, .btn {
   -moz-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
+  z-index: 11;
   &:hover {
     color: #CBE3F1;
     text-decoration: none;
@@ -478,6 +479,7 @@ nav {
   list-style:none;
   vertical-align: middle;
   box-sizing: border-box;
+  z-index: 11;
   a {
     &:hover {
       text-decoration: none;
@@ -583,11 +585,46 @@ nav {
 
 // internal section left side navigation
 .navigation {
-  display: none;
+  position: fixed;
+  display: grid;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-left: 30px;
+  pointer-events: none;
+  z-index: 10;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100vh;
+    transform: translateX(-500px);
+    z-index: -1;
+    background: -moz-linear-gradient(left, rgba(28,29,31,1) 0%, rgba(28,29,31,1) 15%, rgba(28,29,31,0.16) 83%, rgba(28,29,31,0) 96%);
+    background: -webkit-linear-gradient(left, rgba(28,29,31,1) 0%,rgba(28,29,31,1) 15%,rgba(28,29,31,0.16) 83%,rgba(28,29,31,0) 96%);
+    background: linear-gradient(to right, rgba(28,29,31,1) 0%,rgba(28,29,31,1) 15%,rgba(28,29,31,0.16) 83%,rgba(28,29,31,0) 96%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1d1f', endColorstr='#001c1d1f',GradientType=1 );
+    -webkit-transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1) 100ms;
+    -moz-transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1) 100ms;
+    -ms-transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1) 100ms;
+    transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1) 100ms;
+  }
   ul {
     list-style: none;
     width: 185px;
     margin: auto 0;
+    pointer-events: fill;
+    -webkit-transform: translateY(25px);
+    -moz-transform: translateY(25px);
+    -ms-transform: translateY(25px);
+    transform: translateY(25px);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
     li {
       position: relative;
       display: grid;
@@ -666,33 +703,29 @@ nav {
     }
   }
   &.is-active {
-    position: fixed;
-    display: grid;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    padding-left: 30px;
-    z-index: 10;
-    -webkit-transition: all 0.5s ease-out 0.5s;
-    -moz-transition: all 0.5s ease-out 0.5s;
-    -ms-transition: all 0.5s ease-out 0.5s;
-    transition: all 0.5s ease-out 0.5s;
-    background: -moz-radial-gradient(center, ellipse cover, rgba(28,29,31,0) 0%, rgba(28,29,31,1) 69%);
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(28,29,31,0) 0%,rgba(28,29,31,1) 69%);
-    background: radial-gradient(ellipse at center, rgba(28,29,31,0) 0%,rgba(28,29,31,1) 69%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001c1d1f', endColorstr='#1c1d1f',GradientType=1 );
     ul li a {
-      color: $color-primary;
+      color: rgba(162,204,226,0.2);
       &::before {
         border: 1px solid $color-primary;
+      }
+      &.trigger-section--is-active {
+        color: $color-primary;
+      }
+      &.trigger-section--is-visited {
+        color: rgba(162,204,226,0.2);
       }
       &::after,
       &.trigger-section--is-active::before,
       &.trigger-section--is-visited::before {
         background-color: $color-primary;
       }
+      &:hover {
+        color: rgba(162,204,226,0.6);
+      }
     }
+  }
+  &.is-active::after {
+    transform: translateX(0px);
   }
 }
 
@@ -766,7 +799,7 @@ nav {
   padding-top: 75px;
   padding-bottom: 68px;
   h2 {
-    font-family: $font-fourth;
+    font-family: $font-primary;
     color: $color-eighth;
     font-size: 25px;
     text-transform: uppercase;
