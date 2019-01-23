@@ -26,11 +26,9 @@ function scrollMagicNavigation(){
       })
       .on("enter", function (e) {
           $('.trigger-section-one').addClass('trigger-section--is-active');
-          $('.navigation').addClass('navigation--is-active');
       })
       .on("leave", function (e) {
           if (e.scrollDirection == 'REVERSE') {
-                $('.navigation').removeClass('navigation--is-active');
                 $('.trigger-section-one').removeClass('trigger-section--is-active');
           }
       })
@@ -135,6 +133,14 @@ function scrollMagicNavigation(){
 //smoothState.js
 $(function($){
   'use strict';
+
+  $(".navigation ul").hover(
+  function() {
+    $(this).addClass( "navigation--is-active" );
+  }, function() {
+    $( this ).removeClass( "navigation--is-active" );
+  }
+);
 
   $( "div.b--header__trigger" ).click(function() {
       if($(".b--header").hasClass("is-active")){
@@ -241,6 +247,14 @@ $(function($){
           controller = new ScrollMagic.Controller();
 
           $container.html($newContent);
+
+          $(".navigation ul").hover(
+          function() {
+            $(this).addClass( "navigation--is-active" );
+          }, function() {
+            $( this ).removeClass( "navigation--is-active" );
+          }
+        );
 
           scrollMagicNavigation();
 
