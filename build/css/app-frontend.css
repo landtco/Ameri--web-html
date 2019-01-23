@@ -127,6 +127,14 @@ a, .btn {
       -ms-transform: scaleX(1);
       transform: scaleX(1); }
 
+@keyframes sonar {
+  0% {
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1); }
+  0% {
+    -webkit-box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.1); } }
+
 .b--header {
   position: fixed;
   top: 0;
@@ -499,17 +507,17 @@ nav {
 
 .navigation {
   position: fixed;
-  top: 50%;
-  left: 30px;
-  z-index: 100;
-  color: white;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%); }
+  display: grid;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  padding-left: 30px;
+  z-index: 100; }
   .navigation ul {
     list-style: none;
-    margin: 0; }
+    width: 185px;
+    margin: auto 0; }
     .navigation ul li {
       position: relative;
       display: grid;
@@ -519,13 +527,18 @@ nav {
         display: block;
         margin: auto 0;
         font-family: "Stellar-light", Arial, Sans-Serif;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        line-height: 1em;
+        -webkit-transition: all 0.5s ease-out;
+        -moz-transition: all 0.5s ease-out;
+        -ms-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out; }
         .navigation ul li a::before {
           content: "";
           position: absolute;
           display: block;
           top: 48%;
-          left: -30px;
+          left: -35px;
           width: 16px;
           height: 16px;
           border: 1px solid #A2CCE2;
@@ -533,24 +546,33 @@ nav {
           -webkit-transform: translateY(-50%);
           -moz-transform: translateY(-50%);
           -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
+          transform: translateY(-50%);
+          -webkit-transition: all 0.5s ease-out;
+          -moz-transition: all 0.5s ease-out;
+          -ms-transition: all 0.5s ease-out;
+          transition: all 0.5s ease-out; }
+        .navigation ul li a:hover::before {
+          background-color: #A2CCE2; }
         .navigation ul li a::after {
           content: "";
           position: absolute;
           display: block;
           top: 40px;
-          left: -23px;
+          left: -27px;
           width: 1px;
           height: 55px;
           background-color: #A2CCE2; }
         .navigation ul li a.trigger-section--is-active::before {
-          background-color: #A2CCE2; }
+          background-color: #A2CCE2;
+          -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1);
+          box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.1);
+          animation: sonar 1s alternate infinite ease-in-out; }
         .navigation ul li a.trigger-section--is-visited::before {
-          background-color: red; }
+          background-color: #A2CCE2;
+          -webkit-box-shadow: none;
+          box-shadow: none; }
     .navigation ul li:last-child a::after {
       display: none; }
-  .navigation.navigation--is-active {
-    display: block; }
 
 .b--article {
   position: relative;
