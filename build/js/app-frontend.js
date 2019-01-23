@@ -26,12 +26,15 @@ function scrollMagicNavigation(){
   })
   .on("enter", function (e) {
       $('.trigger-section-one').addClass('trigger-section--is-active');
-      $('.navigation').addClass('navigation--is-active');
+      $('.trigger-section-main').addClass('trigger-section--is-visited');
+      $('.trigger-section-one').removeClass('trigger-section--is-visited');
   })
   .on("leave", function (e) {
       if (e.scrollDirection == 'REVERSE') {
             $('.navigation').removeClass('navigation--is-active');
             $('.trigger-section-one').removeClass('trigger-section--is-active');
+            $('.trigger-section-one').removeClass('trigger-section--is-visited');
+            $('.trigger-section-main').addClass('trigger-section--is-active');
       }
   })
   .addIndicators('por aca!')
@@ -40,12 +43,13 @@ function scrollMagicNavigation(){
   new ScrollMagic.Scene({triggerElement: "#articleTwo",duration: oneHeight, triggerHook: 0.4,
   })
   .on("enter", function (e) {
-        $('.trigger-section-one').removeClass('trigger-section--is-active');
+        $('.trigger-section-one').addClass('trigger-section--is-visited');
         $('.trigger-section-two').addClass('trigger-section--is-active');
   })
   .on("leave", function (e) {
       if (e.scrollDirection == 'REVERSE') {
-          $('.trigger-section-two').removeClass('trigger-section--is-active');
+        $('.trigger-section-two').removeClass('trigger-section--is-active');
+        $('.trigger-section-two').removeClass('trigger-section--is-visited');
       }
   })
   .addIndicators('por aca!')
@@ -54,13 +58,14 @@ function scrollMagicNavigation(){
   new ScrollMagic.Scene({triggerElement: "#articleThree",duration: oneHeight, triggerHook: 0.4,
   })
   .on("enter", function (e) {
-       $('.trigger-section-two').removeClass('trigger-section--is-active');
+       $('.trigger-section-two').addClass('trigger-section--is-visited');
        $('.trigger-section-three').addClass('trigger-section--is-active');
 
   })
   .on("leave", function (e) {
     if (e.scrollDirection == 'REVERSE') {
-       $('.trigger-section-three').removeClass('trigger-section--is-active');
+      $('.trigger-section-three').addClass('trigger-section--is-active');
+      $('.trigger-section-three').removeClass('trigger-section--is-visited');
     }
   })
   .addIndicators('por aca!')
@@ -69,13 +74,15 @@ function scrollMagicNavigation(){
   new ScrollMagic.Scene({triggerElement: "#articleFour",duration: oneHeight, triggerHook: 0.4,
   })
   .on("enter", function (e) {
-       $('.trigger-section-three').removeClass('trigger-section--is-active');
+       $('.trigger-section-three').addClass('trigger-section--is-visited');
        $('.trigger-section-four').addClass('trigger-section--is-active');
 
   })
   .on("leave", function (e) {
     if (e.scrollDirection == 'REVERSE') {
-       $('.trigger-section-four').removeClass('trigger-section--is-active');
+      $('.trigger-section-four').addClass('trigger-section--is-active');
+      $('.trigger-section-four').removeClass('trigger-section--is-visited');
+
     }
   })
   .addIndicators('por aca!')
@@ -89,7 +96,9 @@ function scrollMagicNavigation(){
   })
   .on("leave", function (e) {
     if (e.scrollDirection == 'REVERSE') {
-       $('.trigger-section-five').removeClass('trigger-section--is-active');
+       $('.trigger-section-five').addClass('trigger-section--is-active');
+       $('.trigger-section-five').removeClass('trigger-section--is-visited');
+
     }
   })
   .addIndicators('por aca!')
@@ -108,18 +117,27 @@ $(function(){
   'use strict';
 
 
-
-  $( ".b--header__trigger" ).click(function(e) {
-    e.preventDefault();
-    $(".b--header").addClass("is-active");
-    $(".b--header__menu").addClass("is-active");
-    $(".b--header__trigger").addClass("is-active");
-    $(".b--header__overlay").addClass("is-active");
-  });
-
-  $(".b--header__overlay.is-active").click(function() {
-    console.log("hey");
-  });
+  $( "div.b--header__trigger" || "div.b--header__overlay").click(function() {
+     console.log("clicked");
+     $(".b--header").toggleClass("is-active");
+     $(".b--header__menu").toggleClass("is-active");
+     $(".b--header__trigger").toggleClass("is-active").setTimeout(500);
+     $(".b--header__overlay").toggleClass("is-active");
+   });
+   // $("div.b--header__overlay.is-active").click(function() {
+   //   console.log("hey");
+   //   $(".b--header").removeClass("is-active");
+   //   $(".b--header__menu").removeClass("is-active");
+   //   $(".b--header__trigger").removeClass("is-active");
+   //   $(".b--header__overlay").removeClass("is-active");
+   // });
+   // $( "div.b--header__trigger.is-active" ).click(function() {
+   //   console.log("close");
+   //   $(".b--header").removeClass("is-active");
+   //   $(".b--header__menu").removeClass("is-active");
+   //   $(".b--header__trigger").removeClass("is-active");
+   //   $(".b--header__overlay").removeClass("is-active");
+   // });
 
     scrollMagicNavigation();
 
