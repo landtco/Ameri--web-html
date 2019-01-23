@@ -136,9 +136,11 @@ $(function($){
 
   $(".navigation ul").hover(
   function() {
-    $(this).addClass( "navigation--is-active" );
+    $(this).addClass("is-active");
+    $(".navigation").addClass( "is-active" );
   }, function() {
-    $( this ).removeClass( "navigation--is-active" );
+    $( this ).removeClass( "is-active" );
+    $(".navigation").removeClass( "is-active" );
   }
 );
 
@@ -250,13 +252,29 @@ $(function($){
 
           $(".navigation ul").hover(
           function() {
-            $(this).addClass( "navigation--is-active" );
+            $(this).addClass("is-active");
+            $(".navigation").addClass( "is-active" );
           }, function() {
-            $( this ).removeClass( "navigation--is-active" );
+            $( this ).removeClass( "is-active" );
+            $(".navigation").removeClass( "is-active" );
           }
         );
 
           scrollMagicNavigation();
+
+          $( "div.b--header__trigger" ).click(function() {
+              if($(".b--header").hasClass("is-active")){
+                $(".b--header").removeClass("is-active");
+                $(".b--header__menu").removeClass("is-active");
+                $(".b--header__trigger").removeClass("is-active");
+                $(".b--header__overlay").removeClass("is-active");
+            }else{
+                $(".b--header").addClass("is-active");
+                $(".b--header__menu").addClass("is-active");
+                $(".b--header__trigger").addClass("is-active");
+                $(".b--header__overlay").addClass("is-active");
+            }
+        });
 
           $(".trigger-section").click(function(e) {
             e.preventDefault();
