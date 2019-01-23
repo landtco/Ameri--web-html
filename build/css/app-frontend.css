@@ -516,11 +516,24 @@ nav {
   height: 100vh;
   padding-left: 30px;
   pointer-events: none;
-  z-index: 10;
-  -webkit-transition: all 0.5s ease-out 0.5s;
-  -moz-transition: all 0.5s ease-out 0.5s;
-  -ms-transition: all 0.5s ease-out 0.5s;
-  transition: all 0.5s ease-out 0.5s; }
+  z-index: 10; }
+  .navigation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 100vh;
+    transform: translateX(-500px);
+    z-index: -1;
+    background: -moz-linear-gradient(left, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
+    background: -webkit-linear-gradient(left, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
+    background: linear-gradient(to right, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1d1f', endColorstr='#001c1d1f',GradientType=1 );
+    -webkit-transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1) 100ms;
+    -moz-transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1) 100ms;
+    -ms-transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1) 100ms;
+    transition: all 0.5s cubic-bezier(0.9, 0, 0.33, 1) 100ms; }
   .navigation ul {
     list-style: none;
     width: 185px;
@@ -529,7 +542,11 @@ nav {
     -webkit-transform: translateY(25px);
     -moz-transform: translateY(25px);
     -ms-transform: translateY(25px);
-    transform: translateY(25px); }
+    transform: translateY(25px);
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -ms-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out; }
     .navigation ul li {
       position: relative;
       display: grid;
@@ -593,28 +610,20 @@ nav {
         border: 1px solid rgba(162, 204, 226, 0.2); }
       .navigation.navigation--is-scrolled ul li a::after, .navigation.navigation--is-scrolled ul li a.trigger-section--is-visited::before {
         background-color: rgba(162, 204, 226, 0.2); }
-  .navigation.is-active {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1c1d1f+0,1c1d1f+83&1+15,0+96 */
-    background: -moz-linear-gradient(left, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
-    /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
-    /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
-    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1d1f', endColorstr='#001c1d1f',GradientType=1 );
-    /* IE6-9 */ }
-    .navigation.is-active ul li a {
+  .navigation.is-active ul li a {
+    color: rgba(162, 204, 226, 0.2); }
+    .navigation.is-active ul li a::before {
+      border: 1px solid #A2CCE2; }
+    .navigation.is-active ul li a.trigger-section--is-active {
+      color: #A2CCE2; }
+    .navigation.is-active ul li a.trigger-section--is-visited {
       color: rgba(162, 204, 226, 0.2); }
-      .navigation.is-active ul li a::before {
-        border: 1px solid #A2CCE2; }
-      .navigation.is-active ul li a.trigger-section--is-active {
-        color: #A2CCE2; }
-      .navigation.is-active ul li a.trigger-section--is-visited {
-        color: rgba(162, 204, 226, 0.2); }
-      .navigation.is-active ul li a::after, .navigation.is-active ul li a.trigger-section--is-active::before, .navigation.is-active ul li a.trigger-section--is-visited::before {
-        background-color: #A2CCE2; }
-      .navigation.is-active ul li a:hover {
-        color: rgba(162, 204, 226, 0.6); }
+    .navigation.is-active ul li a::after, .navigation.is-active ul li a.trigger-section--is-active::before, .navigation.is-active ul li a.trigger-section--is-visited::before {
+      background-color: #A2CCE2; }
+    .navigation.is-active ul li a:hover {
+      color: rgba(162, 204, 226, 0.6); }
+  .navigation.is-active::after {
+    transform: translateX(0px); }
 
 .b--article {
   position: relative;
@@ -673,7 +682,7 @@ nav {
   padding-top: 75px;
   padding-bottom: 68px; }
   .b--cta-primary h2 {
-    font-family: "Avenir-Heavy", Arial, Sans-Serif;
+    font-family: "Stellar-light", Arial, Sans-Serif;
     color: #FFFFFF;
     font-size: 25px;
     text-transform: uppercase;
