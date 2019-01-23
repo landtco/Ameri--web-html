@@ -149,7 +149,7 @@ a, .btn {
   -ms-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  z-index: 10; }
+  z-index: 150; }
   .b--header > .container-fluid > .row {
     justify-content: space-between; }
   .b--header .b-ameri__brand {
@@ -573,6 +573,23 @@ nav {
           box-shadow: none; }
     .navigation ul li:last-child a::after {
       display: none; }
+  .navigation.navigation--is-scrolled ul li a {
+    color: rgba(162, 204, 226, 0.2); }
+    .navigation.navigation--is-scrolled ul li a::before {
+      border: 1px solid rgba(162, 204, 226, 0.2); }
+    .navigation.navigation--is-scrolled ul li a::after, .navigation.navigation--is-scrolled ul li a.trigger-section--is-visited::before {
+      background-color: rgba(162, 204, 226, 0.2); }
+  .navigation.is-active {
+    background: -moz-linear-gradient(left, #1c1d1f 0%, rgba(28, 29, 31, 0) 100%);
+    background: -webkit-linear-gradient(left, #1c1d1f 0%, rgba(28, 29, 31, 0) 100%);
+    background: linear-gradient(to right, #1c1d1f 0%, rgba(28, 29, 31, 0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1d1f', endColorstr='#001c1d1f',GradientType=1 ); }
+    .navigation.is-active ul li a {
+      color: #A2CCE2; }
+      .navigation.is-active ul li a::before {
+        border: 1px solid #A2CCE2; }
+      .navigation.is-active ul li a::after, .navigation.is-active ul li a.trigger-section--is-active::before, .navigation.is-active ul li a.trigger-section--is-visited::before {
+        background-color: #A2CCE2; }
 
 .b--article {
   position: relative;
