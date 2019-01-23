@@ -135,14 +135,14 @@ $(function($){
   'use strict';
 
   $(".navigation ul").hover(
-  function() {
-    $(this).addClass("is-active");
-    $(".navigation").addClass( "is-active" );
-  }, function() {
-    $( this ).removeClass( "is-active" );
-    $(".navigation").removeClass( "is-active" );
-  }
-);
+    function() {
+      $(this).addClass("is-active");
+      $(".navigation").addClass( "is-active" );
+    }, function() {
+      $( this ).removeClass( "is-active" );
+      $(".navigation").removeClass( "is-active" );
+    }
+  );
 
   $( "div.b--header__trigger" ).click(function() {
       if($(".b--header").hasClass("is-active")){
@@ -172,8 +172,12 @@ $(function($){
     $(window).scroll(function() {
 				if ($(".b--header").offset().top > 50) {
 						$(".b--header").addClass("b--header--is-scrolled");
+            $(".navigation").addClass("navigation--is-scrolled");
+
 				} else {
 						$(".b--header").removeClass("b--header--is-scrolled");
+            $(".navigation").removeClass("navigation--is-scrolled");
+
 				}
 		});
 
@@ -250,15 +254,15 @@ $(function($){
 
           $container.html($newContent);
 
-          $(".navigation ul").hover(
-          function() {
-            $(this).addClass("is-active");
-            $(".navigation").addClass( "is-active" );
-          }, function() {
-            $( this ).removeClass( "is-active" );
-            $(".navigation").removeClass( "is-active" );
-          }
-        );
+            $(".navigation ul").hover(
+              function() {
+                  $(this).addClass("is-active");
+                  $(".navigation").addClass( "is-active" );
+              }, function() {
+                  $( this ).removeClass( "is-active" );
+                  $(".navigation").removeClass( "is-active" );
+              }
+           );
 
           scrollMagicNavigation();
 
