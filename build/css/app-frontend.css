@@ -466,6 +466,44 @@ nav {
     background-repeat: no-repeat;
     background-position: right top;
     background-size: cover; }
+  nav #cloud:hover {
+    animation-name: cloudhover; }
+  nav #enterprise:hover {
+    animation-name: enterprisehover; }
+  nav #digital:hover {
+    animation-name: digitalhover; }
+
+@keyframes cloudhover {
+  0% {
+    width: 33.33333%;
+    left: 0;
+    z-index: 3; }
+  100% {
+    width: 34.33333%;
+    left: 0;
+    z-index: 3; } }
+
+@keyframes enterprisehover {
+  0% {
+    width: 33.33333%;
+    left: 33.33333%;
+    right: 33.33333%;
+    z-index: 3; }
+  100% {
+    width: 34.33333%;
+    left: 32.83333%;
+    right: 32.83333%;
+    z-index: 3; } }
+
+@keyframes digitalhover {
+  0% {
+    width: 33.33333%;
+    right: 0;
+    z-index: 3; }
+  100% {
+    width: 34.33333%;
+    right: 0;
+    z-index: 3; } }
   nav #cloud.cloud--is-active,
   nav #enterprise.enterprise--is-active {
     animation-name: expand; }
