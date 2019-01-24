@@ -533,6 +533,149 @@ nav {
       }
     }
   }
+  // line back to home
+  .back-link {
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    width: 150px;
+    height: 100vh;
+    padding-left: 30px;
+    overflow: visible;
+    z-index: 100;
+    animation-name: backlinkpositioning;
+    animation-duration: 200ms;
+    animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
+    animation-fill-mode: forwards;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100vh;
+      opacity: 0.5;
+      background: none;
+      background: transparent;
+      z-index: -1;
+      background: -moz-linear-gradient(left, rgba(28,29,31,1) 0%, rgba(28,29,31,1) 15%, rgba(28,29,31,0.16) 83%, rgba(28,29,31,0) 96%);
+      background: -webkit-linear-gradient(left, rgba(28,29,31,1) 0%,rgba(28,29,31,1) 15%,rgba(28,29,31,0.16) 83%,rgba(28,29,31,0) 96%);
+      background: linear-gradient(to right, rgba(28,29,31,1) 0%,rgba(28,29,31,1) 15%,rgba(28,29,31,0.16) 83%,rgba(28,29,31,0) 96%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1d1f', endColorstr='#001c1d1f',GradientType=1 );
+      -webkit-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+      -moz-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+      -ms-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+      transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+    }
+    &__arrow {
+      position: absolute;
+      top: 48vh;
+      top: calc(41vh + 67px);
+      width: 56px;
+      height: 2px;
+      background-color: $color-eighth;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      animation-name: makelinelarger;
+      animation-duration: 200ms;
+      animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
+      animation-fill-mode: forwards;
+      animation-delay: 100ms;
+      &::before, &::after  {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: $color-eighth;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        animation-duration: 200ms;
+        animation-timing-function: ease-out;
+        animation-fill-mode: forwards;
+        animation-delay: 400ms;
+        transform-origin: 0;
+      }
+      &::before {
+        top: 0px;
+        left: 1px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        animation-name: backarrowtop;
+      }
+      &::after {
+        top: 0px;
+        left: 1px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        animation-name: backarrowbutton;
+      }
+    }
+    &__title {
+      font-family: $font-seventh;
+      color: $color-eighth;
+      opacity: 0;
+      position: absolute;
+      top: 46.9vh;
+      top: calc(41vh + 56px);
+      left: 90px;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+    }
+    &:hover {
+      padding-left: 20px;
+      .back-link__arrow {
+        &::before {
+          -webkit-transform: rotate(-40deg);
+          -moz-transform: rotate(-40deg);
+          -ms-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+        }
+        &::after {
+          -webkit-transform: rotate(40deg);
+          -moz-transform: rotate(40deg);
+          -ms-transform: rotate(40deg);
+          transform: rotate(40deg);
+        }
+      }
+      .back-link__title {
+        opacity: 1;
+      }
+    }
+    &:hover::after {
+      width: 300px;
+    }
+  }
+  @keyframes backarrowtop {
+    0% {width: 2px;}
+    100% {width: 23px;}
+  }
+  @keyframes backarrowbutton {
+    0% {width: 2px;}
+    100% {width: 23px;}
+  }
+  @keyframes makelinelarger {
+    0% {width: 56px;}
+    50% {width: 226px;}
+    100% {width: 56px;}
+  }
+  @keyframes backlinkpositioning {
+    0% {left: 50%;}
+    100% {left: 0%;}
+  }
+  // nav ID
   #cloud, #enterprise, #digital {
     position: absolute;
     padding-top: 41vh;

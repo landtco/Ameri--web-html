@@ -207,6 +207,27 @@ $(function($){
         $("#enterprise").addClass("enterprise--notshown");
       }
     });
+
+    $("#arrow").click(function(e) {
+      e.preventDefault();
+      controller.destroy();
+      var returningID = $("#arrow").attr("data-alt");
+      console.log(returningID);
+      $("#" + returningID).addClass(returningID + "--is-shown");
+      if (returningID == "cloud") {
+        $("#digital").addClass("digital--is-notshown");
+        $("#enterprise").addClass("enterprise--is-notshown");
+      }
+      if (returningID == "enterprise") {
+        $("#digital").addClass("digital--is-notshown");
+        $("#cloud").addClass("cloud--is-notshown");
+      }
+      if (returningID == "digital") {
+        $("#cloud").addClass("cloud--is-notshown");
+        $("#enterprise").addClass("enterprise--notshown");
+      }
+    });
+
     $(".trigger-section").click(function(e) {
       e.preventDefault();
       var triggerID = $(this).attr("trigger-to");
@@ -299,6 +320,27 @@ $(function($){
             }
 
           });
+
+          $("#arrow").click(function(e) {
+            e.preventDefault();
+            controller.destroy();
+            var returningID = $("#arrow").attr("data-alt");
+            console.log(returningID);
+            $("#" + returningID).addClass(returningID + "--is-shown");
+            if (returningID == "cloud") {
+              $("#digital").addClass("digital--is-notshown");
+              $("#enterprise").addClass("enterprise--is-notshown");
+            }
+            if (returningID == "enterprise") {
+              $("#digital").addClass("digital--is-notshown");
+              $("#cloud").addClass("cloud--is-notshown");
+            }
+            if (returningID == "digital") {
+              $("#cloud").addClass("cloud--is-notshown");
+              $("#enterprise").addClass("enterprise--notshown");
+            }
+          });
+          
         },
       }
     },
