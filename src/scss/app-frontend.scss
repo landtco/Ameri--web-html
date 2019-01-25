@@ -478,6 +478,12 @@ a, .btn {
             transform: scaleX(1);
           }
         }
+        &:first-child {
+          display: none;
+          @media all and (max-width: $break-lg){
+            display: block;
+          }
+        }
       }
     }
   }
@@ -535,6 +541,9 @@ a, .btn {
     &__menu.is-active {
       width: 33.33333%;
       @media all and (max-width: $break-lg){
+        width: 40%;
+      }
+      @media all and (max-width: $break-md){
         width: 100%;
       }
       .b--header__menu-list {
@@ -952,6 +961,9 @@ nav {
   padding-left: 30px;
   pointer-events: none;
   z-index: 10;
+  @media all and (max-width: $break-md) {
+    padding-left: 18px;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -1024,7 +1036,7 @@ nav {
           content: "";
           position: absolute;
           display: block;
-          top: 41px;
+          top: 42px;
           left: -27px;
           width: 1px;
           height: 54px;
@@ -1108,22 +1120,43 @@ nav {
     position: absolute;
     background-repeat: no-repeat;
     background-position: left top;
-    background-size: 686px 719px;
+    background-size: 850px 891px;
     width: 100%;
     height: 100vh;
-    top: 55px;
+    top: 80px;
     z-index: 0;
-    @media all and (max-width: $break-xl){
-      background-position: left;
-      top: 0px;
+    @media all and (max-width: $break-xxl){
+      background-size: 686px 719px;
+      background-position: left top;
+      top: 55px;
       left: -200px;
+    }
+    @media all and (max-width: $break-xl){
+      background-size: 580px 610px;
+      background-position: left;
+      top: -80px;
+      left: -200px;
+    }
+    @media all and (max-width: $break-lg){
+      display: none;
     }
   }
   .b--front-items {
     @media all and (max-width: $break-lg){
+      .b--image-artwork {
+        margin-top: 30px;
+      }
+    }
+    @media all and (max-width: $break-lg){
       .container {
         padding-left: 30px;
         padding-right: 30px;
+      }
+    }
+    @media all and (max-width: $break-md) {
+      .container {
+        padding-left: 60px;
+        padding-right: 60px;
       }
     }
     .b--info {
@@ -1142,6 +1175,9 @@ nav {
         &.text-right {
           text-align: left !important;
         }
+      }
+      &::-webkit-scrollbar {
+        width: 10px;
       }
       &__title {
         font-family: $font-primary;
@@ -1163,12 +1199,12 @@ nav {
         letter-spacing: 0.05em;
         line-height: 30px;
         @media all and (max-width: $break-xxl){
-          font-size: 18px;
-          line-height: 27px;
-        }
-        @media all and (max-width: $break-lg){
           font-size: 16px;
           line-height: 24px;
+        }
+        @media all and (max-width: $break-lg){
+          font-size: 14px;
+          line-height: 22px;
         }
       }
       &__content {
@@ -1176,13 +1212,14 @@ nav {
         &__small {
           font-size: 16px;
           line-height: 25px;
+          margin-bottom: 10px;
           @media all and (max-width: $break-xxl){
             font-size: 14px;
-            line-height: 23px;
+            line-height: 22px;
           }
           @media all and (max-width: $break-lg){
             font-size: 13px;
-            line-height: 21px;
+            line-height: 20px;
           }
         }
       }
@@ -1207,11 +1244,11 @@ nav {
         line-height: 25px;
         @media all and (max-width: $break-xxl){
           font-size: 14px;
-          line-height: 23px;
+          line-height: 22px;
         }
         @media all and (max-width: $break-lg){
           font-size: 13px;
-          line-height: 21px;
+          line-height: 20px;
         }
         li {
           margin-bottom: 20px;
@@ -1239,15 +1276,15 @@ nav {
             font-size: 18px;
             padding-bottom: 0;
           }
-          @media all and (max-width: $break-lg){
-            margin-bottom: 14px;
-          }
         }
       }
       .btn-primary {
         margin-bottom: 20px;
         @media all and (max-width: $break-lg){
           width: 100%;
+          margin-bottom: 30px;
+          font-size: 16px;
+          margin-bottom: 3px;
         }
       }
       //for height bigger than 675px
@@ -1255,9 +1292,6 @@ nav {
       	overflow-y: auto;
       	padding-right: 30px;
         width: calc(100% + 10px);
-        &::-webkit-scrollbar {
-          width: 10px;
-        }
       }
     }
   }
