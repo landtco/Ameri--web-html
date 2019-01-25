@@ -311,31 +311,33 @@ a, .btn {
 
 @keyframes backarrowtop {
   0% {
-    width: 2px; }
+    width: 0px; }
   100% {
     width: 23px; } }
 
 @keyframes backarrowbutton {
   0% {
-    width: 2px; }
+    width: 0px; }
   100% {
     width: 23px; } }
 
 @keyframes makelinelarger {
   0% {
-    width: 56px; }
-  50% {
-    width: 426px; }
+    width: 36px; }
+  59% {
+    width: 226px; }
   100% {
     width: 56px; } }
 
 @keyframes backlinkpositioning {
   0% {
     left: 50%;
-    padding-left: 0; }
+    padding-left: 0;
+    pointer-events: none; }
   100% {
     left: 0%;
-    padding-left: 30; } }
+    padding-left: 30px;
+    pointer-events: fill; } }
 
 .b--header {
   position: fixed;
@@ -782,6 +784,10 @@ nav {
     left: 0;
     right: 0;
     z-index: 2; }
+    nav #cloud.link--open h1::after,
+    nav #enterprise.link--open h1::after,
+    nav #digital.link--open h1::after {
+      opacity: 0; }
     @media all and (max-width: 960px) {
       nav #cloud.link--open,
       nav #enterprise.link--open,
@@ -807,7 +813,8 @@ nav {
     animation-name: backlinkpositioning;
     animation-duration: 800ms;
     animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
-    animation-fill-mode: forwards; }
+    animation-fill-mode: forwards;
+    pointer-events: none; }
     nav .back-link::after {
       content: "";
       position: absolute;
@@ -815,7 +822,7 @@ nav {
       left: 0;
       width: 0;
       height: 100vh;
-      opacity: 0.5;
+      opacity: 0;
       background: none;
       background: transparent;
       z-index: -1;
@@ -831,7 +838,7 @@ nav {
       position: absolute;
       top: 48vh;
       top: calc(41vh + 67px);
-      width: 56px;
+      width: 36px;
       height: 2px;
       background-color: #FFFFFF;
       -webkit-transition: all 0.2s ease-in-out;
@@ -839,14 +846,15 @@ nav {
       -ms-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
-      animation-duration: 400ms;
+      animation-name: makelinelarger;
+      animation-duration: 800ms;
       animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
       animation-fill-mode: forwards;
-      animation-delay: 450ms; }
+      animation-delay: 85ms; }
       nav .back-link__arrow::before, nav .back-link__arrow::after {
         content: "";
         position: absolute;
-        width: 2px;
+        width: 0px;
         height: 2px;
         background-color: #FFFFFF;
         -webkit-transition: all 0.2s ease-in-out;
@@ -857,7 +865,7 @@ nav {
         animation-duration: 200ms;
         animation-timing-function: ease-out;
         animation-fill-mode: forwards;
-        animation-delay: 400ms;
+        animation-delay: 700ms;
         transform-origin: 0; }
       nav .back-link__arrow::before {
         top: 0px;
@@ -903,6 +911,7 @@ nav {
       nav .back-link:hover .back-link__title {
         opacity: 1; }
     nav .back-link:hover::after {
+      opacity: 0.5;
       width: 300px; }
 
 .navigation {
