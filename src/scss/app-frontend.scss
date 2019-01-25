@@ -544,7 +544,7 @@ nav {
     overflow: visible;
     z-index: 100;
     animation-name: backlinkpositioning;
-    animation-duration: 200ms;
+    animation-duration: 400ms;
     animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
     animation-fill-mode: forwards;
     &::after {
@@ -580,7 +580,7 @@ nav {
       -o-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
       animation-name: makelinelarger;
-      animation-duration: 200ms;
+      animation-duration: 300ms;
       animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
       animation-fill-mode: forwards;
       animation-delay: 100ms;
@@ -668,7 +668,7 @@ nav {
   }
   @keyframes makelinelarger {
     0% {width: 56px;}
-    50% {width: 226px;}
+    50% {width: 426px;}
     100% {width: 56px;}
   }
   @keyframes backlinkpositioning {
@@ -939,6 +939,10 @@ nav {
     padding-top: 84px;
     padding-bottom: 86px;
   }
+  @media all and (max-width: $break-lg){
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
   .b--background-items {
     position: absolute;
     background-repeat: no-repeat;
@@ -947,17 +951,36 @@ nav {
     width: 100%;
     height: 100vh;
     top: 55px;
-    @media all and (max-width:  $break-xl){
+    z-index: 0;
+    @media all and (max-width: $break-xl){
       background-position: left;
       top: 0px;
       left: -200px;
     }
   }
   .b--front-items {
+    @media all and (max-width: $break-lg){
+      .container {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+    }
     .b--info {
-      max-height: 676px;
+      max-height: 730px;
+    	overflow-y: auto;
+    	padding-right: 20px;
+      width: calc(100% + 10px);
+      padding-bottom: 30px;
       @media all and (max-width: $break-xl){
-        max-height: 512px;
+        max-height: 530px;
+      }
+      @media all and (max-width: $break-lg){
+        max-height: 100%;
+        padding-bottom: 60px;
+      	padding-right: 0px;
+        &.text-right {
+          text-align: left !important;
+        }
       }
       &__title {
         font-family: $font-primary;
@@ -973,6 +996,10 @@ nav {
         font-size: 20px;
         letter-spacing: 0.05em;
         line-height: 30px;
+        @media all and (max-width: $break-lg){
+          font-size: 16px;
+          line-height: 24px;
+        }
       }
       &__content{
         margin-bottom: 40px;
@@ -984,10 +1011,16 @@ nav {
         color: $color-nineth;
       }
       ul {
+        font-family: $font-third;
+        color: $color-eighth;
         list-style: none;
         padding-left: 30px;
         font-size: 16px;
         line-height: 25px;
+        @media all and (max-width: $break-lg){
+          font-size: 13px;
+          line-height: 21px;
+        }
         li {
           margin-bottom: 20px;
         }
@@ -1008,6 +1041,9 @@ nav {
       }
       .btn-primary {
         margin-bottom: 20px;
+        @media all and (max-width: $break-lg){
+          width: 100%;
+        }
       }
       //for height bigger than 675px
       &.scroll {
