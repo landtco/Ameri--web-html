@@ -634,7 +634,8 @@ nav {
     font-family: "Stellar-light", Arial, Sans-Serif;
     font-size: 50px;
     text-transform: uppercase;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    letter-spacing: 1px; }
     @media all and (max-width: 960px) {
       nav a h1 {
         position: absolute;
@@ -663,7 +664,8 @@ nav {
         transition: all 0.2s ease-in-out; } }
   nav a h2 {
     font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
-    font-size: 25px; }
+    font-size: 25px;
+    letter-spacing: 1px; }
     @media all and (max-width: 960px) {
       nav a h2 {
         opacity: 0; } }
@@ -1088,12 +1090,20 @@ nav {
       font-size: 35px;
       text-transform: uppercase;
       margin-bottom: 40px; }
+      @media all and (max-width: 1340px) {
+        .b--article .b--front-items .b--info__title {
+          font-size: 32px;
+          margin-bottom: 30px; } }
     .b--article .b--front-items .b--info__content, .b--article .b--front-items .b--info__content__small, .b--article .b--front-items .b--info__foot {
       font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
       color: #FFFFFF;
       font-size: 20px;
       letter-spacing: 0.05em;
       line-height: 30px; }
+      @media all and (max-width: 1340px) {
+        .b--article .b--front-items .b--info__content, .b--article .b--front-items .b--info__content__small, .b--article .b--front-items .b--info__foot {
+          font-size: 18px;
+          line-height: 27px; } }
       @media all and (max-width: 960px) {
         .b--article .b--front-items .b--info__content, .b--article .b--front-items .b--info__content__small, .b--article .b--front-items .b--info__foot {
           font-size: 16px;
@@ -1103,6 +1113,10 @@ nav {
       .b--article .b--front-items .b--info__content__small {
         font-size: 16px;
         line-height: 25px; }
+        @media all and (max-width: 1340px) {
+          .b--article .b--front-items .b--info__content__small {
+            font-size: 14px;
+            line-height: 23px; } }
         @media all and (max-width: 960px) {
           .b--article .b--front-items .b--info__content__small {
             font-size: 13px;
@@ -1112,6 +1126,12 @@ nav {
       font-size: 24px;
       text-transform: uppercase;
       color: #484849; }
+      @media all and (max-width: 1340px) {
+        .b--article .b--front-items .b--info h4 {
+          font-size: 20px; } }
+      @media all and (max-width: 960px) {
+        .b--article .b--front-items .b--info h4 {
+          font-size: 18px; } }
     .b--article .b--front-items .b--info ul {
       font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
       color: #FFFFFF;
@@ -1119,12 +1139,22 @@ nav {
       padding-left: 30px;
       font-size: 16px;
       line-height: 25px; }
+      @media all and (max-width: 1340px) {
+        .b--article .b--front-items .b--info ul {
+          font-size: 14px;
+          line-height: 23px; } }
       @media all and (max-width: 960px) {
         .b--article .b--front-items .b--info ul {
           font-size: 13px;
           line-height: 21px; } }
       .b--article .b--front-items .b--info ul li {
         margin-bottom: 20px; }
+        @media all and (max-width: 1340px) {
+          .b--article .b--front-items .b--info ul li {
+            margin-bottom: 17px; } }
+        @media all and (max-width: 960px) {
+          .b--article .b--front-items .b--info ul li {
+            margin-bottom: 15px; } }
       .b--article .b--front-items .b--info ul li::before {
         content: "\2022";
         color: #A2CCE2;
@@ -1136,6 +1166,13 @@ nav {
       margin-top: 40px; }
       .b--article .b--front-items .b--info__foot .btn {
         font-size: 20px; }
+        @media all and (max-width: 1340px) {
+          .b--article .b--front-items .b--info__foot .btn {
+            font-size: 18px;
+            padding-bottom: 0; } }
+        @media all and (max-width: 960px) {
+          .b--article .b--front-items .b--info__foot .btn {
+            margin-bottom: 14px; } }
     .b--article .b--front-items .b--info .btn-primary {
       margin-bottom: 20px; }
       @media all and (max-width: 960px) {

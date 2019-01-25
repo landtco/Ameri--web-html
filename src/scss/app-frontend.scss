@@ -19,6 +19,7 @@ $font-sixth: 'Avenir-Book', Arial, Sans-Serif;
 $font-seventh: 'Avenir-Light', Arial, Sans-Serif;
 
 // mediaqueries
+$break-xxl: 1340px;
 $break-xl: 1140px;
 $break-lg: 960px;
 $break-md: 720px;
@@ -616,6 +617,7 @@ nav {
       font-size: 50px;
       text-transform: uppercase;
       margin-bottom: 30px;
+      letter-spacing: 1px;
       @media all and (max-width: $break-lg){
         position: absolute;
         display: inline-block;
@@ -648,6 +650,7 @@ nav {
     h2 {
       font-family: $font-third;
       font-size: 25px;
+      letter-spacing: 1px;
       @media all and (max-width: $break-lg){
         opacity: 0;
       }
@@ -1146,6 +1149,10 @@ nav {
         font-size: 35px;
         text-transform: uppercase;
         margin-bottom: 40px;
+        @media all and (max-width: $break-xxl){
+          font-size: 32px;
+          margin-bottom: 30px;
+        }
       }
       &__content,
       &__content__small,
@@ -1155,6 +1162,10 @@ nav {
         font-size: 20px;
         letter-spacing: 0.05em;
         line-height: 30px;
+        @media all and (max-width: $break-xxl){
+          font-size: 18px;
+          line-height: 27px;
+        }
         @media all and (max-width: $break-lg){
           font-size: 16px;
           line-height: 24px;
@@ -1165,6 +1176,10 @@ nav {
         &__small {
           font-size: 16px;
           line-height: 25px;
+          @media all and (max-width: $break-xxl){
+            font-size: 14px;
+            line-height: 23px;
+          }
           @media all and (max-width: $break-lg){
             font-size: 13px;
             line-height: 21px;
@@ -1176,6 +1191,12 @@ nav {
         font-size: 24px;
         text-transform: uppercase;
         color: $color-nineth;
+        @media all and (max-width: $break-xxl){
+          font-size: 20px;
+        }
+        @media all and (max-width: $break-lg){
+          font-size: 18px;
+        }
       }
       ul {
         font-family: $font-third;
@@ -1184,12 +1205,22 @@ nav {
         padding-left: 30px;
         font-size: 16px;
         line-height: 25px;
+        @media all and (max-width: $break-xxl){
+          font-size: 14px;
+          line-height: 23px;
+        }
         @media all and (max-width: $break-lg){
           font-size: 13px;
           line-height: 21px;
         }
         li {
           margin-bottom: 20px;
+          @media all and (max-width: $break-xxl){
+            margin-bottom: 17px;
+          }
+          @media all and (max-width: $break-lg){
+            margin-bottom: 15px;
+          }
         }
         li::before {
           content: "\2022";
@@ -1204,6 +1235,13 @@ nav {
         margin-top: 40px;
         .btn {
           font-size: 20px;
+          @media all and (max-width: $break-xxl){
+            font-size: 18px;
+            padding-bottom: 0;
+          }
+          @media all and (max-width: $break-lg){
+            margin-bottom: 14px;
+          }
         }
       }
       .btn-primary {
