@@ -331,9 +331,11 @@ a, .btn {
 
 @keyframes backlinkpositioning {
   0% {
-    left: 50%; }
+    left: 50%;
+    padding-left: 0; }
   100% {
-    left: 0%; } }
+    left: 0%;
+    padding-left: 30; } }
 
 .b--header {
   position: fixed;
@@ -642,9 +644,10 @@ nav {
         content: "";
         position: absolute;
         display: block;
-        width: 10%;
+        left: 44%;
+        left: calc(50% - 25px);
+        width: 50px;
         margin-top: 7px;
-        margin-left: 45%;
         height: 2px;
         background-color: #FFFFFF;
         -webkit-transform: scaleX(0);
@@ -795,14 +798,14 @@ nav {
   nav .back-link {
     position: absolute;
     display: inline-block;
-    left: 50%;
+    left: 47%;
     width: 150px;
     height: 100vh;
     padding-left: 30px;
     overflow: visible;
     z-index: 100;
     animation-name: backlinkpositioning;
-    animation-duration: 400ms;
+    animation-duration: 800ms;
     animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
     animation-fill-mode: forwards; }
     nav .back-link::after {
@@ -836,11 +839,10 @@ nav {
       -ms-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
-      animation-name: makelinelarger;
-      animation-duration: 300ms;
+      animation-duration: 400ms;
       animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
       animation-fill-mode: forwards;
-      animation-delay: 100ms; }
+      animation-delay: 450ms; }
       nav .back-link__arrow::before, nav .back-link__arrow::after {
         content: "";
         position: absolute;
@@ -1077,18 +1079,25 @@ nav {
       font-size: 35px;
       text-transform: uppercase;
       margin-bottom: 40px; }
-    .b--article .b--front-items .b--info__content, .b--article .b--front-items .b--info__foot {
+    .b--article .b--front-items .b--info__content, .b--article .b--front-items .b--info__content__small, .b--article .b--front-items .b--info__foot {
       font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
       color: #FFFFFF;
       font-size: 20px;
       letter-spacing: 0.05em;
       line-height: 30px; }
       @media all and (max-width: 960px) {
-        .b--article .b--front-items .b--info__content, .b--article .b--front-items .b--info__foot {
+        .b--article .b--front-items .b--info__content, .b--article .b--front-items .b--info__content__small, .b--article .b--front-items .b--info__foot {
           font-size: 16px;
           line-height: 24px; } }
     .b--article .b--front-items .b--info__content {
       margin-bottom: 40px; }
+      .b--article .b--front-items .b--info__content__small {
+        font-size: 16px;
+        line-height: 25px; }
+        @media all and (max-width: 960px) {
+          .b--article .b--front-items .b--info__content__small {
+            font-size: 13px;
+            line-height: 21px; } }
     .b--article .b--front-items .b--info h4 {
       font-family: "Stellar-light", Arial, Sans-Serif;
       font-size: 24px;

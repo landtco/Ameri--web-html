@@ -259,8 +259,8 @@ a, .btn {
   100% {width: 56px;}
 }
 @keyframes backlinkpositioning {
-  0% {left: 50%;}
-  100% {left: 0%;}
+  0% {left: 50%; padding-left: 0;}
+  100% {left: 0%; padding-left: 30;}
 }
 
 
@@ -627,9 +627,10 @@ nav {
           content: "";
           position: absolute;
           display: block;
-          width: 10%;
+          left: 44%;
+          left: calc(50% - 25px);
+          width: 50px;
           margin-top: 7px;
-          margin-left: 45%;
           height: 2px;
           background-color: $color-eighth;
           -webkit-transform: scaleX(0);
@@ -811,14 +812,14 @@ nav {
   .back-link {
     position: absolute;
     display: inline-block;
-    left: 50%;
+    left: 47%;
     width: 150px;
     height: 100vh;
     padding-left: 30px;
     overflow: visible;
     z-index: 100;
     animation-name: backlinkpositioning;
-    animation-duration: 400ms;
+    animation-duration: 800ms;
     animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
     animation-fill-mode: forwards;
     &::after {
@@ -853,11 +854,11 @@ nav {
       -ms-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
-      animation-name: makelinelarger;
-      animation-duration: 300ms;
+      // animation-name: makelinelarger;
+      animation-duration: 400ms;
       animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
       animation-fill-mode: forwards;
-      animation-delay: 100ms;
+      animation-delay: 450ms;
       &::before, &::after  {
         content: "";
         position: absolute;
@@ -1144,6 +1145,7 @@ nav {
         margin-bottom: 40px;
       }
       &__content,
+      &__content__small,
       &__foot {
         font-family: $font-third;
         color: $color-eighth;
@@ -1155,8 +1157,16 @@ nav {
           line-height: 24px;
         }
       }
-      &__content{
+      &__content {
         margin-bottom: 40px;
+        &__small {
+          font-size: 16px;
+          line-height: 25px;
+          @media all and (max-width: $break-lg){
+            font-size: 13px;
+            line-height: 21px;
+          }
+        }
       }
       h4 {
         font-family: $font-primary;
