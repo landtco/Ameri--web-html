@@ -149,6 +149,192 @@ a, .btn {
     -webkit-box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.1);
     box-shadow: 0 0 0 0px rgba(255, 255, 255, 0.1); } }
 
+@keyframes cloudhover {
+  0% {
+    width: 33.33333%;
+    left: 0;
+    z-index: 3; }
+  100% {
+    width: 34.33333%;
+    left: 0;
+    z-index: 3; } }
+
+@keyframes enterprisehover {
+  0% {
+    width: 33.33333%;
+    left: 33.33333%;
+    right: 33.33333%;
+    z-index: 3; }
+  100% {
+    width: 34.33333%;
+    left: 32.83333%;
+    right: 32.83333%;
+    z-index: 3; } }
+
+@keyframes digitalhover {
+  0% {
+    width: 33.33333%;
+    right: 0;
+    z-index: 3; }
+  100% {
+    width: 34.33333%;
+    right: 0;
+    z-index: 3; } }
+
+@keyframes expand {
+  0% {
+    width: 33.33333%;
+    z-index: 3; }
+  100% {
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3; } }
+
+@keyframes digitalexpand {
+  0% {
+    width: 33.33333%;
+    z-index: 3;
+    right: 0; }
+  100% {
+    width: 100%;
+    right: 0;
+    z-index: 3; } }
+
+@keyframes collapseback {
+  0% {
+    width: 100%;
+    left: 0%;
+    right: 0%;
+    z-index: 3; }
+  100% {
+    width: 33.33333%;
+    left: auto;
+    right: auto;
+    z-index: 3; } }
+
+@keyframes enterprisecollapseback {
+  0% {
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 3; }
+  100% {
+    width: 33.33333%;
+    left: 33.33333%;
+    right: 33.33333%;
+    z-index: 3; } }
+
+@keyframes digitalcollapseback {
+  0% {
+    width: 100%;
+    left: 0%;
+    right: 0%;
+    z-index: 3; }
+  100% {
+    width: 33.33333%;
+    left: 66.66666%;
+    right: 0%;
+    z-index: 3; } }
+
+@keyframes expandCloudMobile {
+  0% {
+    height: 40.2vh;
+    top: 0;
+    bottom: 60vh;
+    z-index: 3; }
+  100% {
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    z-index: 3; } }
+
+@keyframes expandEnterpriseMobile {
+  0% {
+    height: 30vh;
+    top: 40vh;
+    bottom: 30vh;
+    z-index: 3; }
+  100% {
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    z-index: 3; } }
+
+@keyframes expandDigitalMobile {
+  0% {
+    height: 30vh;
+    top: 70vh;
+    bottom: 0;
+    z-index: 3; }
+  100% {
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    z-index: 3; } }
+
+@keyframes collapseCloudMobile {
+  0% {
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    z-index: 3; }
+  100% {
+    height: 40.2vh;
+    top: 0;
+    bottom: 60vh;
+    z-index: 3; } }
+
+@keyframes collapseEnterpriseMobile {
+  0% {
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    z-index: 3; }
+  100% {
+    height: 30vh;
+    top: 40vh;
+    bottom: 30vh;
+    z-index: 3; } }
+
+@keyframes collapseDigitalMobile {
+  0% {
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    z-index: 3; }
+  100% {
+    height: 30vh;
+    top: 70vh;
+    bottom: 0;
+    z-index: 3; } }
+
+@keyframes backarrowtop {
+  0% {
+    width: 2px; }
+  100% {
+    width: 23px; } }
+
+@keyframes backarrowbutton {
+  0% {
+    width: 2px; }
+  100% {
+    width: 23px; } }
+
+@keyframes makelinelarger {
+  0% {
+    width: 56px; }
+  50% {
+    width: 426px; }
+  100% {
+    width: 56px; } }
+
+@keyframes backlinkpositioning {
+  0% {
+    left: 50%; }
+  100% {
+    left: 0%; } }
+
 .b--header {
   position: fixed;
   top: 0;
@@ -164,8 +350,15 @@ a, .btn {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   z-index: 150; }
+  @media all and (max-width: 960px) {
+    .b--header {
+      height: 60px;
+      padding-top: 15px; } }
   .b--header > .container-fluid > .row {
     justify-content: space-between; }
+    @media all and (max-width: 960px) {
+      .b--header > .container-fluid > .row {
+        flex-wrap: nowrap; } }
   .b--header .b-ameri__brand {
     display: inline-block;
     height: 71px;
@@ -173,6 +366,14 @@ a, .btn {
     line-height: 70px;
     padding-right: 32px;
     border-right: 2px solid #D8D8D8; }
+    @media all and (max-width: 960px) {
+      .b--header .b-ameri__brand {
+        width: 150px;
+        height: 48px;
+        padding-left: 15px;
+        line-height: 45px;
+        padding-right: 15px;
+        border-right: none; } }
   .b--header .b-ameri h2 {
     position: relative;
     display: inline-block;
@@ -184,6 +385,12 @@ a, .btn {
     -moz-transform: translateY(5px);
     -ms-transform: translateY(5px);
     transform: translateY(5px); }
+    @media all and (max-width: 960px) {
+      .b--header .b-ameri h2 {
+        display: block;
+        font-size: 16px;
+        padding-left: 15px;
+        max-width: 45vw; } }
   .b--header.b--header--is-scrolled {
     padding-top: 14px;
     background: -moz-linear-gradient(top, rgba(21, 21, 23, 0.99) 0%, rgba(21, 21, 23, 0) 100%);
@@ -218,6 +425,12 @@ a, .btn {
     margin-top: 20px;
     cursor: pointer;
     z-index: 22; }
+    @media all and (max-width: 960px) {
+      .b--header__trigger {
+        right: 20px;
+        width: 44px;
+        height: 26px;
+        margin-top: 12px; } }
     .b--header__trigger span {
       position: relative;
       display: block;
@@ -230,14 +443,20 @@ a, .btn {
       -ms-transition: all 0.2s ease-out;
       -o-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out; }
+      @media all and (max-width: 960px) {
+        .b--header__trigger span {
+          width: 44px;
+          height: 2px;
+          margin-bottom: 10px; } }
       .b--header__trigger span:last-child {
         margin-bottom: 0; }
-    .b--header__trigger:hover span:nth-child(1) {
-      width: 45px; }
-    .b--header__trigger:hover span:nth-child(2) {
-      width: 27px; }
-    .b--header__trigger:hover span:nth-child(3) {
-      width: 39px; }
+    @media all and (min-width: 960px) {
+      .b--header__trigger:hover span:nth-child(1) {
+        width: 45px; }
+      .b--header__trigger:hover span:nth-child(2) {
+        width: 27px; }
+      .b--header__trigger:hover span:nth-child(3) {
+        width: 39px; } }
   .b--header__menu {
     position: fixed;
     width: 0%;
@@ -317,6 +536,9 @@ a, .btn {
       -moz-transform: rotate(45deg) translate(11px, 11px);
       -ms-transform: rotate(45deg) translate(11px, 11px);
       transform: rotate(45deg) translate(11px, 11px); }
+      @media all and (max-width: 960px) {
+        .b--header__trigger.is-active span:nth-child(1) {
+          margin-bottom: 17px; } }
     .b--header__trigger.is-active span:nth-child(2) {
       width: 0; }
     .b--header__trigger.is-active span:nth-child(3) {
@@ -324,22 +546,26 @@ a, .btn {
       -moz-transform: rotate(-45deg) translate(11px, -11px);
       -ms-transform: rotate(-45deg) translate(11px, -11px);
       transform: rotate(-45deg) translate(11px, -11px); }
-    .b--header__trigger.is-active:hover span {
-      width: 24px; }
-    .b--header__trigger.is-active:hover span:nth-child(1) {
-      -webkit-transform: rotate(45deg) translate(11px, 1px);
-      -moz-transform: rotate(45deg) translate(11px, 1px);
-      -ms-transform: rotate(45deg) translate(11px, 1px);
-      transform: rotate(45deg) translate(11px, 1px); }
-    .b--header__trigger.is-active:hover span:nth-child(2) {
-      width: 0; }
-    .b--header__trigger.is-active:hover span:nth-child(3) {
-      -webkit-transform: rotate(-45deg) translate(11px, -1px);
-      -moz-transform: rotate(-45deg) translate(11px, -1px);
-      -ms-transform: rotate(-45deg) translate(11px, -1px);
-      transform: rotate(-45deg) translate(11px, -1px); }
+    @media all and (min-width: 960px) {
+      .b--header__trigger.is-active:hover span {
+        width: 24px; }
+      .b--header__trigger.is-active:hover span:nth-child(1) {
+        -webkit-transform: rotate(45deg) translate(11px, 1px);
+        -moz-transform: rotate(45deg) translate(11px, 1px);
+        -ms-transform: rotate(45deg) translate(11px, 1px);
+        transform: rotate(45deg) translate(11px, 1px); }
+      .b--header__trigger.is-active:hover span:nth-child(2) {
+        width: 0; }
+      .b--header__trigger.is-active:hover span:nth-child(3) {
+        -webkit-transform: rotate(-45deg) translate(11px, -1px);
+        -moz-transform: rotate(-45deg) translate(11px, -1px);
+        -ms-transform: rotate(-45deg) translate(11px, -1px);
+        transform: rotate(-45deg) translate(11px, -1px); } }
   .b--header__menu.is-active {
     width: 33.33333%; }
+    @media all and (max-width: 960px) {
+      .b--header__menu.is-active {
+        width: 100%; } }
     .b--header__menu.is-active .b--header__menu-list {
       opacity: 1;
       right: 70px; }
@@ -405,27 +631,37 @@ nav {
     font-size: 50px;
     text-transform: uppercase;
     margin-bottom: 30px; }
-    nav a h1::after {
-      content: "";
-      position: absolute;
-      display: block;
-      width: 10%;
-      margin-top: 7px;
-      margin-left: 45%;
-      height: 2px;
-      background-color: #FFFFFF;
-      -webkit-transform: scaleX(0);
-      -moz-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-      transform: scaleX(0);
-      -webkit-transition: all 0.2s ease-in-out;
-      -moz-transition: all 0.2s ease-in-out;
-      -ms-transition: all 0.2s ease-in-out;
-      -o-transition: all 0.2s ease-in-out;
-      transition: all 0.2s ease-in-out; }
+    @media all and (max-width: 960px) {
+      nav a h1 {
+        position: absolute;
+        display: inline-block;
+        margin: 0;
+        padding: 0; } }
+    @media all and (min-width: 960px) {
+      nav a h1::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 10%;
+        margin-top: 7px;
+        margin-left: 45%;
+        height: 2px;
+        background-color: #FFFFFF;
+        -webkit-transform: scaleX(0);
+        -moz-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out; } }
   nav a h2 {
     font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
     font-size: 25px; }
+    @media all and (max-width: 960px) {
+      nav a h2 {
+        opacity: 0; } }
   nav a:hover {
     text-decoration: none; }
     nav a:hover h1::after {
@@ -433,6 +669,129 @@ nav {
       -moz-transform: scaleX(1);
       -ms-transform: scaleX(1);
       transform: scaleX(1); }
+  nav #cloud, nav #enterprise, nav #digital {
+    position: absolute;
+    padding-top: 41vh;
+    width: 33.33333%;
+    height: 100vh;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    animation-duration: 300ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    z-index: 1; }
+    @media all and (max-width: 960px) {
+      nav #cloud, nav #enterprise, nav #digital {
+        display: flex;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        align-items: center; } }
+  nav #cloud {
+    left: 0;
+    background-image: url("../@img_extra/cloud.png");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover; }
+    @media all and (max-width: 960px) {
+      nav #cloud {
+        background-position: center;
+        height: 40.2vh;
+        top: 0;
+        bottom: 60vh;
+        left: 0%;
+        right: 0%; }
+        nav #cloud h1 {
+          padding-top: 20%; } }
+  nav #enterprise {
+    left: 33.33333%;
+    right: 33.33333%;
+    background-image: url("../@img_extra/enterprise.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover; }
+    @media all and (max-width: 960px) {
+      nav #enterprise {
+        background-position: center;
+        height: 30vh;
+        top: 40vh;
+        bottom: 30vh;
+        left: 0%;
+        right: 0%; } }
+  nav #digital {
+    right: 0 !important;
+    background-image: url("../@img_extra/digital.png");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover; }
+    @media all and (max-width: 960px) {
+      nav #digital {
+        background-position: center;
+        height: 30vh;
+        top: 70vh;
+        bottom: 0;
+        left: 0%;
+        right: 0%; } }
+  @media all and (min-width: 960px) {
+    nav #cloud:hover {
+      animation-name: cloudhover; }
+    nav #enterprise:hover {
+      animation-name: enterprisehover; }
+    nav #digital:hover {
+      animation-name: digitalhover; } }
+  nav #cloud.cloud--is-active,
+  nav #enterprise.enterprise--is-active {
+    animation-name: expand; }
+  @media all and (max-width: 960px) {
+    nav #cloud.cloud--is-active {
+      animation-name: expandCloudMobile; } }
+  @media all and (max-width: 960px) {
+    nav #enterprise.enterprise--is-active {
+      animation-name: expandEnterpriseMobile; } }
+  nav #digital.digital--is-active {
+    animation-name: digitalexpand; }
+    @media all and (max-width: 960px) {
+      nav #digital.digital--is-active {
+        animation-name: expandDigitalMobile; } }
+  nav #cloud.cloud--is-shown {
+    animation-name: collapseback; }
+    @media all and (max-width: 960px) {
+      nav #cloud.cloud--is-shown {
+        animation-name: collapseCloudMobile; } }
+  nav #enterprise.enterprise--is-shown {
+    animation-name: enterprisecollapseback; }
+    @media all and (max-width: 960px) {
+      nav #enterprise.enterprise--is-shown {
+        animation-name: collapseEnterpriseMobile; } }
+  nav #digital.digital--is-shown {
+    animation-name: digitalcollapseback; }
+    @media all and (max-width: 960px) {
+      nav #digital.digital--is-shown {
+        animation-name: collapseDigitalMobile; } }
+  nav #cloud.link--open,
+  nav #enterprise.link--open,
+  nav #digital.link--open {
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2; }
+    @media all and (max-width: 960px) {
+      nav #cloud.link--open,
+      nav #enterprise.link--open,
+      nav #digital.link--open {
+        height: 100vh;
+        top: 0;
+        bottom: 0; }
+        nav #cloud.link--open h1,
+        nav #enterprise.link--open h1,
+        nav #digital.link--open h1 {
+          padding-top: 0%; } }
+  nav .link, nav .link--open {
+    pointer-events: none; }
   nav .back-link {
     position: absolute;
     display: inline-block;
@@ -543,179 +902,6 @@ nav {
         opacity: 1; }
     nav .back-link:hover::after {
       width: 300px; }
-
-@keyframes backarrowtop {
-  0% {
-    width: 2px; }
-  100% {
-    width: 23px; } }
-
-@keyframes backarrowbutton {
-  0% {
-    width: 2px; }
-  100% {
-    width: 23px; } }
-
-@keyframes makelinelarger {
-  0% {
-    width: 56px; }
-  50% {
-    width: 426px; }
-  100% {
-    width: 56px; } }
-
-@keyframes backlinkpositioning {
-  0% {
-    left: 50%; }
-  100% {
-    left: 0%; } }
-  nav #cloud, nav #enterprise, nav #digital {
-    position: absolute;
-    padding-top: 41vh;
-    width: 33.33333%;
-    height: 100vh;
-    color: white;
-    font-size: 60px;
-    text-align: center;
-    display: block;
-    overflow: hidden;
-    animation-duration: 300ms;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-    z-index: 1; }
-  nav #cloud {
-    left: 0;
-    background-image: url("../@img_extra/cloud.png");
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: cover; }
-  nav #enterprise {
-    left: 33.33333%;
-    right: 33.33333%;
-    background-image: url("../@img_extra/enterprise.png");
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover; }
-  nav #digital {
-    right: 0 !important;
-    background-image: url("../@img_extra/digital.png");
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-size: cover; }
-  nav #cloud:hover {
-    animation-name: cloudhover; }
-  nav #enterprise:hover {
-    animation-name: enterprisehover; }
-  nav #digital:hover {
-    animation-name: digitalhover; }
-
-@keyframes cloudhover {
-  0% {
-    width: 33.33333%;
-    left: 0;
-    z-index: 3; }
-  100% {
-    width: 34.33333%;
-    left: 0;
-    z-index: 3; } }
-
-@keyframes enterprisehover {
-  0% {
-    width: 33.33333%;
-    left: 33.33333%;
-    right: 33.33333%;
-    z-index: 3; }
-  100% {
-    width: 34.33333%;
-    left: 32.83333%;
-    right: 32.83333%;
-    z-index: 3; } }
-
-@keyframes digitalhover {
-  0% {
-    width: 33.33333%;
-    right: 0;
-    z-index: 3; }
-  100% {
-    width: 34.33333%;
-    right: 0;
-    z-index: 3; } }
-  nav #cloud.cloud--is-active,
-  nav #enterprise.enterprise--is-active {
-    animation-name: expand; }
-
-@keyframes expand {
-  0% {
-    width: 33.33333%;
-    z-index: 3; }
-  100% {
-    width: 100%;
-    left: 0;
-    right: 0;
-    z-index: 3; } }
-  nav #digital.digital--is-active {
-    animation-name: digitalexpand; }
-
-@keyframes digitalexpand {
-  0% {
-    width: 33.33333%;
-    z-index: 3;
-    right: 0; }
-  100% {
-    width: 100%;
-    right: 0;
-    z-index: 3; } }
-  nav #cloud.cloud--is-shown {
-    animation-name: collapseback; }
-
-@keyframes collapseback {
-  0% {
-    width: 100%;
-    left: 0%;
-    right: 0%;
-    z-index: 3; }
-  100% {
-    width: 33.33333%;
-    left: auto;
-    right: auto;
-    z-index: 3; } }
-  nav #enterprise.enterprise--is-shown {
-    animation-name: enterprisecollapseback; }
-
-@keyframes enterprisecollapseback {
-  0% {
-    width: 100%;
-    left: 0;
-    right: 0;
-    z-index: 3; }
-  100% {
-    width: 33.33333%;
-    left: 33.33333%;
-    right: 33.33333%;
-    z-index: 3; } }
-  nav #digital.digital--is-shown {
-    animation-name: digitalcollapseback; }
-
-@keyframes digitalcollapseback {
-  0% {
-    width: 100%;
-    left: 0%;
-    right: 0%;
-    z-index: 3; }
-  100% {
-    width: 33.33333%;
-    left: 66.66666%;
-    right: 0%;
-    z-index: 3; } }
-  nav #cloud.link--open,
-  nav #enterprise.link--open,
-  nav #digital.link--open {
-    width: 100%;
-    left: 0;
-    right: 0;
-    z-index: 2; }
-  nav .link, nav .link--open {
-    pointer-events: none; }
 
 .navigation {
   position: fixed;
@@ -958,12 +1144,6 @@ nav {
       border-top: 15px solid #A2CCE2;
       border-right: 15px solid #A2CCE2;
       z-index: 0; }
-
-#articleOne .bg-image {
-  background-image: url("../@img_extra/cloud-01-bg.png"); }
-
-#articleThree .bg-image {
-  background-image: url("../@img_extra/cloud-03-bg.png"); }
 
 .b--cta-primary {
   text-align: center;

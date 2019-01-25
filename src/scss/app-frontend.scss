@@ -185,6 +185,83 @@ a, .btn {
     box-shadow: 0 0 0 0px rgba(255,255,255,0.1);
   }
 }
+// animation nav hover desktop
+@keyframes cloudhover {
+  0% {width: 33.33333%; left: 0; z-index: 3;}
+  100% {width: 34.33333%; left: 0; z-index: 3;}
+}
+@keyframes enterprisehover {
+  0% {width: 33.33333%; left: 33.33333%; right: 33.33333%; z-index: 3;}
+  100% {width: 34.33333%; left: 32.83333%; right: 32.83333%; z-index: 3;}
+}
+@keyframes digitalhover {
+  0% {width: 33.33333%; right: 0; z-index: 3;}
+  100% {width: 34.33333%; right: 0; z-index: 3;}
+}
+// animation nav desktop
+@keyframes expand {
+  0% {width: 33.33333%;z-index: 3;}
+  100% {width: 100%; left: 0; right: 0; z-index: 3;}
+}
+@keyframes digitalexpand {
+  0% {width: 33.33333%; z-index: 3; right: 0;}
+  100% {width: 100%; right: 0; z-index: 3;}
+}
+@keyframes collapseback {
+  0% {width: 100%; left: 0%; right: 0%; z-index: 3;}
+  100% {width: 33.33333%;  left: auto; right: auto; z-index: 3;}
+}
+@keyframes enterprisecollapseback {
+ 0% {width: 100%; left: 0; right: 0; z-index: 3;}
+ 100% {width: 33.33333%; left: 33.33333%; right: 33.33333%; z-index: 3;}
+}
+@keyframes digitalcollapseback {
+  0% {width: 100%; left: 0%; right: 0%; z-index: 3;}
+  100% {width: 33.33333%; left: 66.66666%; right: 0%; z-index: 3;}
+}
+// animation nav mobile
+@keyframes expandCloudMobile {
+  0% {height: 40.2vh; top: 0; bottom: 60vh; z-index: 3;}
+  100% {height: 100vh; top: 0; bottom: 0; z-index: 3;}
+}
+@keyframes expandEnterpriseMobile {
+  0% {height: 30vh; top: 40vh; bottom: 30vh; z-index: 3;}
+  100% {height: 100vh; top: 0; bottom: 0; z-index: 3;}
+}
+@keyframes expandDigitalMobile {
+  0% {height: 30vh; top: 70vh; bottom: 0; z-index: 3;}
+  100% {height: 100vh; top: 0; bottom: 0; z-index: 3;}
+}
+@keyframes collapseCloudMobile {
+  0% {height: 100vh; top: 0; bottom: 0; z-index: 3;}
+  100% {height: 40.2vh; top: 0; bottom: 60vh; z-index: 3;}
+}
+@keyframes collapseEnterpriseMobile {
+ 0% {height: 100vh; top: 0; bottom: 0; z-index: 3;}
+ 100% {height: 30vh; top: 40vh; bottom: 30vh; z-index: 3;}
+}
+@keyframes collapseDigitalMobile {
+  0% {height: 100vh; top: 0; bottom: 0; z-index: 3;}
+  100% {height: 30vh; top: 70vh; bottom: 0; z-index: 3;}
+}
+// line back animation
+@keyframes backarrowtop {
+  0% {width: 2px;}
+  100% {width: 23px;}
+}
+@keyframes backarrowbutton {
+  0% {width: 2px;}
+  100% {width: 23px;}
+}
+@keyframes makelinelarger {
+  0% {width: 56px;}
+  50% {width: 426px;}
+  100% {width: 56px;}
+}
+@keyframes backlinkpositioning {
+  0% {left: 50%;}
+  100% {left: 0%;}
+}
 
 
 // header
@@ -203,8 +280,15 @@ a, .btn {
   -o-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   z-index: 150;
+  @media all and (max-width: $break-lg){
+    height: 60px;
+    padding-top: 15px;
+  }
   & >.container-fluid > .row {
     justify-content: space-between;
+    @media all and (max-width: $break-lg){
+      flex-wrap: nowrap;
+    }
   }
   // logo
   .b-ameri {
@@ -215,6 +299,14 @@ a, .btn {
       line-height: 70px;
       padding-right: 32px;
       border-right: 2px solid #D8D8D8;
+      @media all and (max-width: $break-lg){
+        width: 150px;
+        height: 48px;
+        padding-left: 15px;
+        line-height: 45px;
+        padding-right: 15px;
+        border-right: none;
+      }
     }
     h2 {
       position: relative;
@@ -227,6 +319,12 @@ a, .btn {
       -moz-transform: translateY(5px);
       -ms-transform: translateY(5px);
       transform: translateY(5px);
+      @media all and (max-width: $break-lg){
+        display: block;
+        font-size: 16px;
+        padding-left: 15px;
+        max-width: 45vw;
+      }
     }
   }
   // logo after scroll
@@ -271,6 +369,12 @@ a, .btn {
     margin-top: 20px;
     cursor: pointer;
     z-index: 22;
+    @media all and (max-width: $break-lg){
+      right: 20px;
+      width: 44px;
+      height: 26px;
+      margin-top: 12px;
+    }
     span {
       position: relative;
       display: block;
@@ -283,13 +387,20 @@ a, .btn {
       -ms-transition: all 0.2s ease-out;
       -o-transition: all 0.2s ease-out;
       transition: all 0.2s ease-out;
+      @media all and (max-width: $break-lg){
+        width: 44px;
+        height: 2px;
+        margin-bottom: 10px;
+      }
       &:last-child {
         margin-bottom: 0;
       }
     }
-    &:hover span:nth-child(1) {width: 45px;}
-    &:hover span:nth-child(2) {width: 27px;}
-    &:hover span:nth-child(3) {width: 39px;}
+    @media all and (min-width: $break-lg){
+      &:hover span:nth-child(1) {width: 45px;}
+      &:hover span:nth-child(2) {width: 27px;}
+      &:hover span:nth-child(3) {width: 39px;}
+    }
   }
   // side menu
   &__menu {
@@ -383,6 +494,9 @@ a, .btn {
         -moz-transform: rotate(45deg) translate(11px,11px);
         -ms-transform: rotate(45deg) translate(11px,11px);
         transform: rotate(45deg) translate(11px,11px);
+        @media all and (max-width: $break-lg){
+          margin-bottom: 17px;
+        }
       }
       & span:nth-child(2) {
         width: 0;
@@ -393,30 +507,35 @@ a, .btn {
         -ms-transform: rotate(-45deg) translate(11px,-11px);
         transform: rotate(-45deg) translate(11px,-11px);
       }
-      &:hover {
-        span {
-          width: 24px;
-        }
-        span:nth-child(1) {
-          -webkit-transform: rotate(45deg) translate(11px,1px);
-          -moz-transform: rotate(45deg) translate(11px,1px);
-          -ms-transform: rotate(45deg) translate(11px,1px);
-          transform: rotate(45deg) translate(11px,1px);
-        }
-        & span:nth-child(2) {
-          width: 0;
-        }
-        span:nth-child(3) {
-          -webkit-transform: rotate(-45deg) translate(11px,-1px);
-          -moz-transform: rotate(-45deg) translate(11px,-1px);
-          -ms-transform: rotate(-45deg) translate(11px,-1px);
-          transform: rotate(-45deg) translate(11px,-1px);
+      @media all and (min-width: $break-lg){
+        &:hover {
+          span {
+            width: 24px;
+          }
+          span:nth-child(1) {
+            -webkit-transform: rotate(45deg) translate(11px,1px);
+            -moz-transform: rotate(45deg) translate(11px,1px);
+            -ms-transform: rotate(45deg) translate(11px,1px);
+            transform: rotate(45deg) translate(11px,1px);
+          }
+          & span:nth-child(2) {
+            width: 0;
+          }
+          span:nth-child(3) {
+            -webkit-transform: rotate(-45deg) translate(11px,-1px);
+            -moz-transform: rotate(-45deg) translate(11px,-1px);
+            -ms-transform: rotate(-45deg) translate(11px,-1px);
+            transform: rotate(-45deg) translate(11px,-1px);
+          }
         }
       }
     }
     // side menu open
     &__menu.is-active {
       width: 33.33333%;
+      @media all and (max-width: $break-lg){
+        width: 100%;
+      }
       .b--header__menu-list {
         opacity: 1;
         right: 70px;
@@ -497,29 +616,40 @@ nav {
       font-size: 50px;
       text-transform: uppercase;
       margin-bottom: 30px;
-      &::after {
-        content: "";
+      @media all and (max-width: $break-lg){
         position: absolute;
-        display: block;
-        width: 10%;
-        margin-top: 7px;
-        margin-left: 45%;
-        height: 2px;
-        background-color: $color-eighth;
-        -webkit-transform: scaleX(0);
-        -moz-transform: scaleX(0);
-        -ms-transform: scaleX(0);
-        transform: scaleX(0);
-        -webkit-transition: all 0.2s ease-in-out;
-        -moz-transition: all 0.2s ease-in-out;
-        -ms-transition: all 0.2s ease-in-out;
-        -o-transition: all 0.2s ease-in-out;
-        transition: all 0.2s ease-in-out;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+      @media all and (min-width: $break-lg){
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 10%;
+          margin-top: 7px;
+          margin-left: 45%;
+          height: 2px;
+          background-color: $color-eighth;
+          -webkit-transform: scaleX(0);
+          -moz-transform: scaleX(0);
+          -ms-transform: scaleX(0);
+          transform: scaleX(0);
+          -webkit-transition: all 0.2s ease-in-out;
+          -moz-transition: all 0.2s ease-in-out;
+          -ms-transition: all 0.2s ease-in-out;
+          -o-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out;
+        }
       }
     }
     h2 {
       font-family: $font-third;
       font-size: 25px;
+      @media all and (max-width: $break-lg){
+        opacity: 0;
+      }
     }
     &:hover {
       text-decoration: none;
@@ -532,6 +662,150 @@ nav {
         }
       }
     }
+  }
+  // nav ID
+  #cloud, #enterprise, #digital {
+    position: absolute;
+    padding-top: 41vh;
+    width: 33.33333%;
+    height: 100vh;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    animation-duration: 300ms;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    z-index: 1;
+    @media all and (max-width: $break-lg){
+      display: flex;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  #cloud {
+    left: 0;
+    background-image: url('../@img_extra/cloud.png');
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    @media all and (max-width: $break-lg){
+      background-position: center;
+      height: 40.2vh;
+      top: 0;
+      bottom: 60vh;
+      left: 0%;
+      right: 0%;
+      h1 {
+        padding-top: 20%;
+      }
+    }
+  }
+  #enterprise {
+    left: 33.33333%;
+    right: 33.33333%;
+    background-image: url('../@img_extra/enterprise.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    @media all and (max-width: $break-lg){
+      background-position: center;
+      height: 30vh;
+      top: 40vh;
+      bottom: 30vh;
+      left: 0%;
+      right: 0%;
+    }
+  }
+  #digital {
+    right: 0 !important;
+    background-image: url('../@img_extra/digital.png');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover;
+    @media all and (max-width: $break-lg){
+      background-position: center;
+      height: 30vh;
+      top: 70vh;
+      bottom: 0;
+      left: 0%;
+      right: 0%;
+    }
+  }
+  // hover nav expand effect
+  @media all and (min-width: $break-lg){
+    #cloud:hover {
+      animation-name: cloudhover;
+    }
+    #enterprise:hover {
+      animation-name: enterprisehover;
+    }
+    #digital:hover {
+      animation-name: digitalhover;
+    }
+  }
+  // animation
+  #cloud.cloud--is-active,
+  #enterprise.enterprise--is-active {
+    animation-name: expand;
+  }
+  #cloud.cloud--is-active {
+    @media all and (max-width: $break-lg) {
+      animation-name: expandCloudMobile;
+    }
+  }
+  #enterprise.enterprise--is-active {
+    @media all and (max-width: $break-lg) {
+      animation-name: expandEnterpriseMobile;
+    }
+  }
+  #digital.digital--is-active {
+    animation-name: digitalexpand;
+    @media all and (max-width: $break-lg) {
+      animation-name: expandDigitalMobile;
+    }
+  }
+  #cloud.cloud--is-shown {
+    animation-name: collapseback;
+    @media all and (max-width: $break-lg) {
+      animation-name: collapseCloudMobile;
+    }
+  }
+  #enterprise.enterprise--is-shown {
+   animation-name: enterprisecollapseback;
+   @media all and (max-width: $break-lg) {
+     animation-name: collapseEnterpriseMobile;
+   }
+  }
+  #digital.digital--is-shown {
+    animation-name: digitalcollapseback;
+    @media all and (max-width: $break-lg) {
+      animation-name: collapseDigitalMobile;
+    }
+  }
+  // prevent width: 100% when section is opened
+  #cloud.link--open,
+  #enterprise.link--open,
+  #digital.link--open {
+    width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    @media all and (max-width: $break-lg) {
+      height: 100vh;
+      top: 0;
+      bottom: 0;
+      h1 {
+        padding-top: 0%;
+      }
+    }
+  }
+  .link, .link--open {
+    pointer-events: none;
   }
   // line back to home
   .back-link {
@@ -657,126 +931,6 @@ nav {
     &:hover::after {
       width: 300px;
     }
-  }
-  @keyframes backarrowtop {
-    0% {width: 2px;}
-    100% {width: 23px;}
-  }
-  @keyframes backarrowbutton {
-    0% {width: 2px;}
-    100% {width: 23px;}
-  }
-  @keyframes makelinelarger {
-    0% {width: 56px;}
-    50% {width: 426px;}
-    100% {width: 56px;}
-  }
-  @keyframes backlinkpositioning {
-    0% {left: 50%;}
-    100% {left: 0%;}
-  }
-  // nav ID
-  #cloud, #enterprise, #digital {
-    position: absolute;
-    padding-top: 41vh;
-    width: 33.33333%;
-    height: 100vh;
-    color: white;
-    font-size: 60px;
-    text-align: center;
-    display: block;
-    overflow: hidden;
-    animation-duration: 300ms;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
-    z-index: 1;
-  }
-  #cloud {
-    left: 0;
-    background-image: url('../@img_extra/cloud.png');
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: cover;
-  }
-  #enterprise {
-    left: 33.33333%;
-    right: 33.33333%;
-    background-image: url('../@img_extra/enterprise.png');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-  }
-  #digital {
-    right: 0 !important;
-    background-image: url('../@img_extra/digital.png');
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-size: cover;
-  }
-  // hover nav expand effect
-  #cloud:hover {animation-name: cloudhover;}
-  #enterprise:hover {animation-name: enterprisehover;}
-  #digital:hover {animation-name: digitalhover;}
-  @keyframes cloudhover {
-    0% {width: 33.33333%; left: 0; z-index: 3;}
-    100% {width: 34.33333%; left: 0; z-index: 3;}
-  }
-  @keyframes enterprisehover {
-    0% {width: 33.33333%; left: 33.33333%; right: 33.33333%; z-index: 3;}
-    100% {width: 34.33333%; left: 32.83333%; right: 32.83333%; z-index: 3;}
-  }
-  @keyframes digitalhover {
-    0% {width: 33.33333%; right: 0; z-index: 3;}
-    100% {width: 34.33333%; right: 0; z-index: 3;}
-  }
-  // animation
-  #cloud.cloud--is-active,
-  #enterprise.enterprise--is-active {
-    animation-name: expand;
-  }
-  @keyframes expand {
-    0% {width: 33.33333%;z-index: 3;}
-    100% {width: 100%; left: 0; right: 0; z-index: 3;}
-  }
-  #digital.digital--is-active {
-    animation-name: digitalexpand;
-  }
-  @keyframes digitalexpand {
-    0% {width: 33.33333%; z-index: 3; right: 0;}
-    100% {width: 100%; right: 0; z-index: 3;}
-  }
-  #cloud.cloud--is-shown {
-    animation-name: collapseback;
-  }
-  @keyframes collapseback {
-    0% {width: 100%; left: 0%; right: 0%; z-index: 3;}
-    100% {width: 33.33333%;  left: auto; right: auto; z-index: 3;}
-  }
-  #enterprise.enterprise--is-shown {
-   animation-name: enterprisecollapseback;
-  }
-  @keyframes enterprisecollapseback {
-   0% {width: 100%; left: 0; right: 0; z-index: 3;}
-   100% {width: 33.33333%; left: 33.33333%; right: 33.33333%; z-index: 3;}
-  }
-  #digital.digital--is-shown {
-    animation-name: digitalcollapseback;
-  }
-  @keyframes digitalcollapseback {
-    0% {width: 100%; left: 0%; right: 0%; z-index: 3;}
-    100% {width: 33.33333%; left: 66.66666%; right: 0%; z-index: 3;}
-  }
-  // prevent width: 100% when section is opened
-  #cloud.link--open,
-  #enterprise.link--open,
-  #digital.link--open {
-    width: 100%;
-    left: 0;
-    right: 0;
-    z-index: 2;
-  }
-  .link, .link--open {
-    pointer-events: none;
   }
 }
 
@@ -1074,9 +1228,6 @@ nav {
     }
   }
 }
-// articles background images
-#articleOne .bg-image {background-image: url('../@img_extra/cloud-01-bg.png');}
-#articleThree .bg-image {background-image: url('../@img_extra/cloud-03-bg.png');}
 
 // main section footer
 .b--cta-primary {
