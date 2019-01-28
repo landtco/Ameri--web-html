@@ -745,7 +745,7 @@ nav {
     background-size: cover; }
     @media all and (max-width: 960px) {
       nav #digital {
-        background-position: center;
+        background-position: left bottom;
         height: 30vh;
         top: 70vh;
         bottom: 0;

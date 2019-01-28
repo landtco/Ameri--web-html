@@ -741,7 +741,7 @@ nav {
     background-position: right top;
     background-size: cover;
     @media all and (max-width: $break-lg){
-      background-position: center;
+      background-position: left bottom;
       height: 30vh;
       top: 70vh;
       bottom: 0;
