@@ -653,11 +653,19 @@ nav {
     font-size: 50px;
     text-transform: uppercase;
     margin-bottom: 30px;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    transform: translateY(0);
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
     @media all and (max-width: 960px) {
       nav a h1 {
         position: absolute;
+        font-size: 60px;
         display: inline-block;
+        text-align: center;
         margin: 0;
         padding: 0; } }
     @media all and (min-width: 960px) {
@@ -683,7 +691,12 @@ nav {
   nav a h2 {
     font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
     font-size: 25px;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
     @media all and (max-width: 960px) {
       nav a h2 {
         opacity: 0; } }
@@ -707,7 +720,12 @@ nav {
     animation-duration: 300ms;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    z-index: 1; }
+    z-index: 1;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out; }
     @media all and (max-width: 960px) {
       nav #cloud, nav #enterprise, nav #digital {
         display: flex;
@@ -724,14 +742,15 @@ nav {
     background-size: cover; }
     @media all and (max-width: 960px) {
       nav #cloud {
-        background-position: center;
+        background-position: center bottom;
+        background-size: auto 122%;
         height: 40.2vh;
         top: 0;
         bottom: 60vh;
         left: 0%;
         right: 0%; }
         nav #cloud h1 {
-          padding-top: 20%; } }
+          transform: translateY(1vh); } }
   nav #enterprise {
     left: 33.33333%;
     right: 33.33333%;
@@ -818,7 +837,54 @@ nav {
         nav #cloud.link--open h1,
         nav #enterprise.link--open h1,
         nav #digital.link--open h1 {
-          padding-top: 0%; } }
+          transform: translateY(-4vh); }
+        nav #cloud.link--open h2,
+        nav #enterprise.link--open h2,
+        nav #digital.link--open h2 {
+          opacity: 1;
+          padding-top: 12vh;
+          font-size: 19px; } }
+  @media all and (max-width: 960px) {
+    nav #cloud.cloud--is-shown h1,
+    nav #cloud.cloud--is-hidden h1,
+    nav #cloud.cloud--is-notshown h1,
+    nav #enterprise.enterprise--is-shown h1,
+    nav #enterprise.enterprise--is-hidden h1,
+    nav #enterprise.enterprise--is-notshown h1,
+    nav #digital.digital--is-shown h1,
+    nav #digital.digital--is-hidden h1,
+    nav #digital.digital--is-notshown h1 {
+      transform: translateY(0vh);
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
+    nav #cloud.cloud--is-shown h2,
+    nav #cloud.cloud--is-hidden h2,
+    nav #cloud.cloud--is-notshown h2,
+    nav #enterprise.enterprise--is-shown h2,
+    nav #enterprise.enterprise--is-hidden h2,
+    nav #enterprise.enterprise--is-notshown h2,
+    nav #digital.digital--is-shown h2,
+    nav #digital.digital--is-hidden h2,
+    nav #digital.digital--is-notshown h2 {
+      opacity: 0;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; } }
+  @media all and (max-width: 960px) {
+    nav #cloud.cloud--is-active h1,
+    nav #enterprise.enterprise--is-active h1,
+    nav #digital.digital--is-active h1 {
+      transform: translateY(-4vh);
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; } }
   nav .link, nav .link--open {
     pointer-events: none; }
   nav .back-link {
@@ -838,7 +904,10 @@ nav {
     @media all and (max-width: 720px) {
       nav .back-link {
         animation: none;
-        left: 0; } }
+        padding-left: 15px;
+        width: 80px;
+        left: 0;
+        pointer-events: fill; } }
     @media all and (min-width: 720px) {
       nav .back-link::after {
         content: "";
@@ -929,6 +998,13 @@ nav {
       -ms-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
+      @media all and (max-width: 720px) {
+        nav .back-link__title {
+          font-size: 9px;
+          text-transform: uppercase;
+          top: 47.3vh;
+          top: calc(41vh + 51px);
+          left: 69px; } }
     nav .back-link:hover {
       padding-left: 20px; }
       nav .back-link:hover .back-link__arrow::before {
@@ -1057,7 +1133,8 @@ nav {
           display: inline-block; }
           @media all and (max-width: 960px) {
             .navigation ul li a span {
-              display: none; } }
+              display: none;
+              opacity: 0; } }
     .navigation ul li:last-child a::after {
       display: none; }
   .navigation.navigation--is-scrolled {

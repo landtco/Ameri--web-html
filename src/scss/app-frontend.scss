@@ -637,9 +637,17 @@ nav {
       text-transform: uppercase;
       margin-bottom: 30px;
       letter-spacing: 1px;
+      transform: translateY(0);
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
       @media all and (max-width: $break-lg){
         position: absolute;
+        font-size: 60px;
         display: inline-block;
+        text-align: center;
         margin: 0;
         padding: 0;
       }
@@ -670,6 +678,11 @@ nav {
       font-family: $font-third;
       font-size: 25px;
       letter-spacing: 1px;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
       @media all and (max-width: $break-lg){
         opacity: 0;
       }
@@ -701,6 +714,11 @@ nav {
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     z-index: 1;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     @media all and (max-width: $break-lg){
       display: flex;
       width: 100%;
@@ -717,14 +735,15 @@ nav {
     background-position: left top;
     background-size: cover;
     @media all and (max-width: $break-lg){
-      background-position: center;
+      background-position: center bottom;
+      background-size: auto 122%;
       height: 40.2vh;
       top: 0;
       bottom: 60vh;
       left: 0%;
       right: 0%;
       h1 {
-        padding-top: 20%;
+        transform: translateY(1vh);
       }
     }
   }
@@ -824,7 +843,54 @@ nav {
       top: 0;
       bottom: 0;
       h1 {
-        padding-top: 0%;
+        transform: translateY(-4vh);
+      }
+      h2 {
+        opacity: 1;
+        padding-top: 12vh;
+        font-size: 19px;
+      }
+    }
+  }
+  #cloud.cloud--is-shown,
+  #cloud.cloud--is-hidden,
+  #cloud.cloud--is-notshown,
+  #enterprise.enterprise--is-shown,
+  #enterprise.enterprise--is-hidden,
+  #enterprise.enterprise--is-notshown,
+  #digital.digital--is-shown,
+  #digital.digital--is-hidden,
+  #digital.digital--is-notshown {
+    @media all and (max-width: $break-lg) {
+      h1 {
+        transform: translateY(0vh);
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+      h2 {
+        opacity: 0;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+      }
+    }
+  }
+  #cloud.cloud--is-active,
+  #enterprise.enterprise--is-active,
+  #digital.digital--is-active {
+    @media all and (max-width: $break-lg) {
+      h1 {
+        transform: translateY(-4vh);
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        -ms-transition: all 0.2s ease-in-out;
+        -o-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
       }
     }
   }
@@ -848,7 +914,10 @@ nav {
     pointer-events: none;
     @media all and (max-width: $break-md) {
       animation: none;
+      padding-left: 15px;
+      width: 80px;
       left: 0;
+      pointer-events: fill;
     }
     @media all and (min-width: $break-md) {//for desktop
       &::after {
@@ -946,6 +1015,13 @@ nav {
       -ms-transition: all 0.2s ease-in-out;
       -o-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out;
+      @media all and (max-width: $break-md) {
+        font-size: 9px;
+        text-transform: uppercase;
+        top: 47.3vh;
+        top: calc(41vh + 51px);
+        left: 69px;
+      }
     }
     &:hover {
       padding-left: 20px;
@@ -1092,6 +1168,7 @@ nav {
           display: inline-block;
           @media all and (max-width: $break-lg){
             display: none;
+            opacity: 0;
           }
         }
       }
