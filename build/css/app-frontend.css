@@ -375,7 +375,7 @@ a, .btn {
     border-right: 2px solid #D8D8D8; }
     @media all and (max-width: 960px) {
       .b--header .b-ameri__brand {
-        width: 150px;
+        width: 170px;
         height: 48px;
         padding-left: 15px;
         line-height: 45px;
@@ -835,25 +835,30 @@ nav {
     animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
     animation-fill-mode: forwards;
     pointer-events: none; }
-    nav .back-link::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0;
-      height: 100vh;
-      opacity: 0;
-      background: none;
-      background: transparent;
-      z-index: -1;
-      background: -moz-linear-gradient(left, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
-      background: -webkit-linear-gradient(left, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
-      background: linear-gradient(to right, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1d1f', endColorstr='#001c1d1f',GradientType=1 );
-      -webkit-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
-      -moz-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
-      -ms-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
-      transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms; }
+    @media all and (max-width: 720px) {
+      nav .back-link {
+        animation: none;
+        left: 0; } }
+    @media all and (min-width: 720px) {
+      nav .back-link::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100vh;
+        opacity: 0;
+        background: none;
+        background: transparent;
+        z-index: -1;
+        background: -moz-linear-gradient(left, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
+        background: -webkit-linear-gradient(left, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
+        background: linear-gradient(to right, #1c1d1f 0%, #1c1d1f 15%, rgba(28, 29, 31, 0.16) 83%, rgba(28, 29, 31, 0) 96%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1d1f', endColorstr='#001c1d1f',GradientType=1 );
+        -webkit-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+        -moz-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+        -ms-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+        transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms; } }
     nav .back-link__arrow {
       position: absolute;
       top: 48vh;
@@ -871,6 +876,11 @@ nav {
       animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
       animation-fill-mode: forwards;
       animation-delay: 85ms; }
+      @media all and (max-width: 720px) {
+        nav .back-link__arrow {
+          top: 49vh;
+          top: calc(41vh + 55px);
+          animation: none; } }
       nav .back-link__arrow::before, nav .back-link__arrow::after {
         content: "";
         position: absolute;
@@ -887,6 +897,9 @@ nav {
         animation-fill-mode: forwards;
         animation-delay: 700ms;
         transform-origin: 0; }
+        @media all and (max-width: 720px) {
+          nav .back-link__arrow::before, nav .back-link__arrow::after {
+            animation-delay: 0ms; } }
       nav .back-link__arrow::before {
         top: 0px;
         left: 1px;

@@ -304,7 +304,7 @@ a, .btn {
       padding-right: 32px;
       border-right: 2px solid #D8D8D8;
       @media all and (max-width: $break-lg){
-        width: 150px;
+        width: 170px;
         height: 48px;
         padding-left: 15px;
         line-height: 45px;
@@ -846,25 +846,31 @@ nav {
     animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
     animation-fill-mode: forwards;
     pointer-events: none;
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
+    @media all and (max-width: $break-md) {
+      animation: none;
       left: 0;
-      width: 0;
-      height: 100vh;
-      opacity: 0;
-      background: none;
-      background: transparent;
-      z-index: -1;
-      background: -moz-linear-gradient(left, rgba(28,29,31,1) 0%, rgba(28,29,31,1) 15%, rgba(28,29,31,0.16) 83%, rgba(28,29,31,0) 96%);
-      background: -webkit-linear-gradient(left, rgba(28,29,31,1) 0%,rgba(28,29,31,1) 15%,rgba(28,29,31,0.16) 83%,rgba(28,29,31,0) 96%);
-      background: linear-gradient(to right, rgba(28,29,31,1) 0%,rgba(28,29,31,1) 15%,rgba(28,29,31,0.16) 83%,rgba(28,29,31,0) 96%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1d1f', endColorstr='#001c1d1f',GradientType=1 );
-      -webkit-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
-      -moz-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
-      -ms-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
-      transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+    }
+    @media all and (min-width: $break-md) {//for desktop
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100vh;
+        opacity: 0;
+        background: none;
+        background: transparent;
+        z-index: -1;
+        background: -moz-linear-gradient(left, rgba(28,29,31,1) 0%, rgba(28,29,31,1) 15%, rgba(28,29,31,0.16) 83%, rgba(28,29,31,0) 96%);
+        background: -webkit-linear-gradient(left, rgba(28,29,31,1) 0%,rgba(28,29,31,1) 15%,rgba(28,29,31,0.16) 83%,rgba(28,29,31,0) 96%);
+        background: linear-gradient(to right, rgba(28,29,31,1) 0%,rgba(28,29,31,1) 15%,rgba(28,29,31,0.16) 83%,rgba(28,29,31,0) 96%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1c1d1f', endColorstr='#001c1d1f',GradientType=1 );
+        -webkit-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+        -moz-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+        -ms-transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+        transition: all 0.3s cubic-bezier(0.9, 0, 0.33, 1) 50ms;
+      }
     }
     &__arrow {
       position: absolute;
@@ -883,6 +889,11 @@ nav {
       animation-timing-function: cubic-bezier(0.9, 0, 0.33, 1);
       animation-fill-mode: forwards;
       animation-delay: 85ms;
+      @media all and (max-width: $break-md) {
+        top: 49vh;
+        top: calc(41vh + 55px);
+        animation: none;
+      }
       &::before, &::after  {
         content: "";
         position: absolute;
@@ -899,6 +910,9 @@ nav {
         animation-fill-mode: forwards;
         animation-delay: 700ms;
         transform-origin: 0;
+        @media all and (max-width: $break-md) {
+          animation-delay: 0ms;
+        }
       }
       &::before {
         top: 0px;
