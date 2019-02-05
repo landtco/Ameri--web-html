@@ -59,9 +59,10 @@ $break-xs: 400px;
 
 // overwrite bootstrap
 .btn {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
+  &:focus {
+    box-shadow: none;
+  }
 }
 
 
@@ -266,6 +267,44 @@ a, .btn {
   0% {left: 50%; padding-left: 0; pointer-events: none;}
   100% {left: 0%; padding-left: 30px; pointer-events: fill;}
 }
+//animations contenido
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translate3d(0, 100%, 0);}
+  to {opacity: 1; transform: translate3d(0, 0, 0);}}
+  @keyframes flipInX {
+    from {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    40% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+      -webkit-animation-timing-function: ease-in;
+      animation-timing-function: ease-in;
+    }
+    60% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+      opacity: 1;
+    }
+    80% {
+      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    }
+    to {
+      -webkit-transform: perspective(400px);
+      transform: perspective(400px);
+    }
+  }
+  .flipInX {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+  }
 
 
 // header
@@ -1062,6 +1101,7 @@ nav {
   pointer-events: none;
   z-index: 10;
   @media all and (max-width: $break-md) {
+    display: none !important;
     padding-left: 20px;
   }
   @media all and (min-width: $break-md) {
@@ -1261,11 +1301,6 @@ nav {
   }
   .b--front-items {
     @media all and (max-width: $break-lg){
-      .b--image-artwork {
-        margin-top: 30px;
-      }
-    }
-    @media all and (max-width: $break-lg){
       .container {
         padding-left: 30px;
         padding-right: 30px;
@@ -1417,6 +1452,9 @@ nav {
   .b--image-artwork {
     position: relative;
     z-index: 1;
+    @media all and (max-width: $break-lg){
+      margin-top: 30px;
+    }
     &__top::after {
       content: "";
       position: absolute;
@@ -1429,6 +1467,17 @@ nav {
       border-top: 15px solid $color-primary;
       border-right: 15px solid $color-primary;
       z-index: 0;
+    }
+  }
+  &.b--article--is-active {
+    .b--info__title {
+      animation: flipInX .4s ease-in .1s forwards;
+    }
+    .b--info__content {
+      animation: fadeInUp .4s ease-in .3s forwards;
+    }
+    .b--image-artwork {
+      animation: fadeInUp .4s ease-in .2s forwards;
     }
   }
 }
