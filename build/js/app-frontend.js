@@ -76,7 +76,8 @@ function scrollMagicNavigation(){
                 $('.trigger-section-main').removeClass('trigger-section--is-visited');
                 $('.navigation').hide();
           }
-            $("#articleOne").removeClass("b--article--is-active");
+          $("#articleOne").removeClass("b--article--is-active");
+          $("#articleOne").addClass("b--article--is-visited");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller
@@ -96,6 +97,7 @@ function scrollMagicNavigation(){
             $('.trigger-section-two').removeClass('trigger-section--is-active');
           }
           $("#articleTwo").removeClass("b--article--is-active");
+          $("#articleTwo").addClass("b--article--is-visited");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller
@@ -116,6 +118,7 @@ function scrollMagicNavigation(){
           $('.trigger-section-three').removeClass('trigger-section--is-active');
         }
         $("#articleThree").removeClass("b--article--is-active");
+        $("#articleThree").addClass("b--article--is-visited");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller
@@ -136,6 +139,7 @@ function scrollMagicNavigation(){
           $('.trigger-section-four').removeClass('trigger-section--is-active');
         }
         $("#articleFour").removeClass("b--article--is-active");
+        $("#articleFour").addClass("b--article--is-visited");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller
@@ -155,6 +159,7 @@ function scrollMagicNavigation(){
            $('.trigger-section-five').removeClass('trigger-section--is-active');
         }
         $("#articleFive").removeClass("b--article--is-active");
+        $("#articleFive").addClass("b--article--is-visited");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller

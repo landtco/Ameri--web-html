@@ -26,10 +26,6 @@ $break-md: 720px;
 $break-sm: 540px;
 $break-xs: 400px;
 
-@keyframes pepe{
-  0{ transform: scale3d(1);}
-}
-
 //fonts
 @font-face {
     font-family: 'Stellar-light';
@@ -87,9 +83,6 @@ a, .btn {
   font-size: 16px;
   color: $color-primary;
   letter-spacing: 0.05em;
-  -webkit-transition: all 0.2s ease-out;
-  -moz-transition: all 0.2s ease-out;
-  -ms-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
   @media all and (max-width: $break-lg){
     font-size: 13px;
@@ -275,41 +268,62 @@ a, .btn {
 @keyframes fadeInUp {
   from {opacity: 0; transform: translate3d(0, 100%, 0);}
   to {opacity: 1; transform: translate3d(0, 0, 0);}}
-  @keyframes flipInX {
-    from {
-      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-      transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in;
-      opacity: 0;
-    }
-    40% {
-      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-      transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
-      -webkit-animation-timing-function: ease-in;
-      animation-timing-function: ease-in;
-    }
-    60% {
-      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-      transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
-      opacity: 1;
-    }
-    80% {
-      -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-      transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
-    }
-    to {
-      -webkit-transform: perspective(400px);
-      transform: perspective(400px);
-    }
-  }
-  .flipInX {
-    -webkit-backface-visibility: visible !important;
-    backface-visibility: visible !important;
-    -webkit-animation-name: flipInX;
-    animation-name: flipInX;
-  }
 
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+  to {
+    transform: perspective(400px);
+  }
+}
+.flipInX {
+  backface-visibility: visible !important;
+  animation-name: flipInX;
+}
+
+@keyframes flipInY {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  40% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+    opacity: 1;
+  }
+  80% {
+    transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+  }
+  to {
+    transform: perspective(400px);
+  }
+}
+.flipInY {
+  backface-visibility: visible !important;
+  animation-name: flipInY;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}}
 
 // header
 .b--header {
@@ -1343,6 +1357,7 @@ nav {
         font-size: 35px;
         text-transform: uppercase;
         margin-bottom: 40px;
+        opacity: 0;
         @media all and (max-width: $break-xxl){
           font-size: 32px;
           margin-bottom: 30px;
@@ -1366,6 +1381,8 @@ nav {
         }
       }
       &__content {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
         margin-bottom: 40px;
         &__small {
           font-size: 16px;
@@ -1455,6 +1472,8 @@ nav {
   }
   .b--image-artwork {
     position: relative;
+    opacity: 0;
+    transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
     z-index: 1;
     @media all and (max-width: $break-lg){
       margin-top: 30px;
@@ -1462,26 +1481,69 @@ nav {
     &__top::after {
       content: "";
       position: absolute;
-      width: 285px;
-      width: calc(100% - 55%);
-      height: 285px;
-      height: calc(100% - 55%);
-      right: -15px;
-      top: -15px;
-      border-top: 15px solid $color-primary;
-      border-right: 15px solid $color-primary;
+      width: 0px;
+      height: 0px;
+      right: 0px;
+      top: 0px;
+      border-top: 0px solid $color-primary;
+      border-right: 0px solid $color-primary;
+      transform: translate3d(0, 0, 0);
+      transition: all 0.4s ease-out;
       z-index: 0;
     }
   }
   &.b--article--is-active {
     .b--info__title {
-      animation: flipInX .4s ease-in .1s forwards;
+      opacity: 1;
+      animation: flipInX .8s ease-in forwards;
     }
     .b--info__content {
       animation: fadeInUp .4s ease-in .3s forwards;
     }
     .b--image-artwork {
-      animation: fadeInUp .4s ease-in .2s forwards;
+      opacity: 1;
+      animation: flipInY .4s ease-in .5s forwards;
+      &__top::after {
+        content: "";
+        position: absolute;
+        width: 285px;
+        width: calc(100% - 55%);
+        height: 285px;
+        height: calc(100% - 55%);
+        right: -15px;
+        top: -15px;
+        border-top: 15px solid $color-primary;
+        border-right: 15px solid $color-primary;
+        transition-delay: 1s;
+      }
+    }
+  }
+  &.b--article--is-visited {
+    .b--info__title {
+      opacity: 1;
+      animation: none;
+    }
+    .b--info__content {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      animation: none;
+    }
+    .b--image-artwork {
+      opacity: 1;
+      transform: perspective(400px) rotate3d(0, 0, 0, 0);
+      animation: none;
+      &__top::after {
+        content: "";
+        position: absolute;
+        width: 285px;
+        width: calc(100% - 55%);
+        height: 285px;
+        height: calc(100% - 55%);
+        right: -15px;
+        top: -15px;
+        border-top: 15px solid $color-primary;
+        border-right: 15px solid $color-primary;
+      }
     }
   }
 }
