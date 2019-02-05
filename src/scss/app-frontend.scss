@@ -26,6 +26,10 @@ $break-md: 720px;
 $break-sm: 540px;
 $break-xs: 400px;
 
+@keyframes pepe{
+  0{ transform: scale3d(1);}
+}
+
 //fonts
 @font-face {
     font-family: 'Stellar-light';
