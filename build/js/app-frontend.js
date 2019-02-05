@@ -64,6 +64,8 @@ function scrollMagicNavigation(){
       new ScrollMagic.Scene({triggerElement: "#articleOne",duration: oneHeight, triggerHook: 0.4,
       })
       .on("enter", function (e) {
+        $("#articleOne").addClass("b--article--is-active");
+        console.log("entro");
           $('.trigger-section-one').addClass('trigger-section--is-active');
           $('.trigger-section-main').addClass('trigger-section--is-visited');
           $('.navigation').show();
@@ -73,9 +75,8 @@ function scrollMagicNavigation(){
                 $('.trigger-section-one').removeClass('trigger-section--is-active');
                 $('.trigger-section-main').removeClass('trigger-section--is-visited');
                 $('.navigation').hide();
-
-
           }
+            $("#articleOne").removeClass("b--article--is-active");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller
@@ -85,6 +86,7 @@ function scrollMagicNavigation(){
       new ScrollMagic.Scene({triggerElement: "#articleTwo",duration: oneHeight, triggerHook: 0.4,
       })
       .on("enter", function (e) {
+            $("#articleTwo").addClass("b--article--is-active");
             $('.trigger-section-one').addClass('trigger-section--is-visited');
             $('.trigger-section-two').addClass('trigger-section--is-active');
       })
@@ -92,8 +94,8 @@ function scrollMagicNavigation(){
           if (e.scrollDirection == 'REVERSE') {
             $('.trigger-section-one').removeClass('trigger-section--is-visited');
             $('.trigger-section-two').removeClass('trigger-section--is-active');
-
           }
+          $("#articleTwo").removeClass("b--article--is-active");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller
@@ -103,6 +105,7 @@ function scrollMagicNavigation(){
       new ScrollMagic.Scene({triggerElement: "#articleThree",duration: oneHeight, triggerHook: 0.4,
       })
       .on("enter", function (e) {
+        $("#articleThree").addClass("b--article--is-active");
         $('.trigger-section-two').addClass('trigger-section--is-visited');
         $('.trigger-section-three').addClass('trigger-section--is-active');
 
@@ -111,8 +114,8 @@ function scrollMagicNavigation(){
         if (e.scrollDirection == 'REVERSE') {
           $('.trigger-section-two').removeClass('trigger-section--is-visited');
           $('.trigger-section-three').removeClass('trigger-section--is-active');
-
         }
+        $("#articleThree").removeClass("b--article--is-active");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller
@@ -122,6 +125,7 @@ function scrollMagicNavigation(){
       new ScrollMagic.Scene({triggerElement: "#articleFour",duration: oneHeight, triggerHook: 0.4,
       })
       .on("enter", function (e) {
+        $("#articleFour").addClass("b--article--is-active");
         $('.trigger-section-three').addClass('trigger-section--is-visited');
         $('.trigger-section-four').addClass('trigger-section--is-active');
 
@@ -131,6 +135,7 @@ function scrollMagicNavigation(){
           $('.trigger-section-three').removeClass('trigger-section--is-visited');
           $('.trigger-section-four').removeClass('trigger-section--is-active');
         }
+        $("#articleFour").removeClass("b--article--is-active");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller
@@ -140,6 +145,7 @@ function scrollMagicNavigation(){
       new ScrollMagic.Scene({triggerElement: "#articleFive",duration: oneHeight, triggerHook: 0.4,
       })
       .on("enter", function (e) {
+        $("#articleFive").addClass("b--article--is-active");
         $('.trigger-section-four').addClass('trigger-section--is-visited');
         $('.trigger-section-five').addClass('trigger-section--is-active');
 
@@ -147,9 +153,8 @@ function scrollMagicNavigation(){
       .on("leave", function (e) {
         if (e.scrollDirection == 'REVERSE') {
            $('.trigger-section-five').removeClass('trigger-section--is-active');
-
-
         }
+        $("#articleFive").removeClass("b--article--is-active");
       })
       // .addIndicators('por aca!')
       .addTo(controller); // assign the scene to the controller
@@ -340,7 +345,7 @@ $(function($){
               $("#enterprise").addClass("enterprise--notshown");
             }
           });
-          
+
         },
       }
     },
