@@ -736,7 +736,7 @@ a, .btn {
     height: 101px; }
     @media all and (max-width: 960px) {
       .b--header.b--header--is-scrolled {
-        height: 120px; } }
+        height: 80px; } }
     @media all and (min-width: 960px) {
       .b--header.b--header--is-scrolled {
         padding-top: 14px; }
