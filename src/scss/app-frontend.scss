@@ -378,11 +378,9 @@ a, .btn {
   }
   // logo after scroll
   &.b--header--is-scrolled {
-    transition: all 0.2s ease-out;
-    background: -moz-linear-gradient(top, rgba(21,21,23,1) 0%, rgba(21,21,23,0) 100%);
-    background: -webkit-linear-gradient(top, rgba(21,21,23,1) 0%,rgba(21,21,23,0) 100%);
-    background: linear-gradient(to bottom, rgba(21,21,23,1) 0%,rgba(21,21,23,0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf151517', endColorstr='#00151517',GradientType=0 );
+    background-color: $color-third;
+    transition: all 0.2s  cubic-bezier(0.9, 0, 0.33, 1);
+    height: 101px;
     @media all and (max-width: $break-lg){
       height: 120px;
     }
@@ -1134,6 +1132,8 @@ section {
     padding-top: 586px;
     .b--background-half {
       position: absolute;
+      display: flex;
+      justify-content: center;
       background-repeat: no-repeat;
       background-position: center -100px;
       background-size: 100% auto;
@@ -1141,6 +1141,14 @@ section {
       height: 586px;
       top: 0px;
       z-index: 0;
+      h1 {
+        font-family: $font-primary;
+        font-size: 50px;
+        text-transform: uppercase;
+        color: white;
+        letter-spacing: 1px;
+        padding-top: 80px;
+      }
     }
     .b--article {
       padding-bottom: 66px;
@@ -1405,6 +1413,15 @@ section {
               a {
                 display: inline-block;
                 vertical-align: middle;
+                img {
+                  transform: scale(1);
+                  transition: all 0.2s ease-out;
+                }
+                &:hover {
+                  img {
+                    transform: scale(1.05);
+                  }
+                }
               }
             }
           }

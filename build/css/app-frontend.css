@@ -730,11 +730,10 @@ a, .btn {
       .b--header .b-ameri h2 {
         display: none; } }
   .b--header.b--header--is-scrolled {
-    -webkit-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-    background: -webkit-gradient(linear, left top, left bottom, from(#151517), to(rgba(21, 21, 23, 0)));
-    background: linear-gradient(to bottom, #151517 0%, rgba(21, 21, 23, 0) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf151517', endColorstr='#00151517',GradientType=0 ); }
+    background-color: #1C1D1F;
+    -webkit-transition: all 0.2s cubic-bezier(0.9, 0, 0.33, 1);
+    transition: all 0.2s cubic-bezier(0.9, 0, 0.33, 1);
+    height: 101px; }
     @media all and (max-width: 960px) {
       .b--header.b--header--is-scrolled {
         height: 120px; } }
@@ -1460,6 +1459,12 @@ section.bg-sixth {
   padding-top: 586px; }
   section.bg-sixth .b--background-half {
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     background-repeat: no-repeat;
     background-position: center -100px;
     background-size: 100% auto;
@@ -1467,6 +1472,13 @@ section.bg-sixth {
     height: 586px;
     top: 0px;
     z-index: 0; }
+    section.bg-sixth .b--background-half h1 {
+      font-family: "Stellar-light", Arial, Sans-Serif;
+      font-size: 50px;
+      text-transform: uppercase;
+      color: white;
+      letter-spacing: 1px;
+      padding-top: 80px; }
   section.bg-sixth .b--article {
     padding-bottom: 66px; }
 
@@ -1698,6 +1710,14 @@ section .b--article {
           section .b--article .b--front-half .b--info__slider--wrapper--item a {
             display: inline-block;
             vertical-align: middle; }
+            section .b--article .b--front-half .b--info__slider--wrapper--item a img {
+              -webkit-transform: scale(1);
+              transform: scale(1);
+              -webkit-transition: all 0.2s ease-out;
+              transition: all 0.2s ease-out; }
+            section .b--article .b--front-half .b--info__slider--wrapper--item a:hover img {
+              -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
       section .b--article .b--front-half .b--info__slider--nav {
         position: absolute;
         display: table-cell;
