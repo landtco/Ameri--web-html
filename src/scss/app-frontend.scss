@@ -1506,7 +1506,6 @@ section {
           }
           .table {
             font-family: $font-third;
-            font-weight: 900;
             letter-spacing: .05rem;
             text-align: left;
             transform: translateY(10px);
@@ -1522,35 +1521,45 @@ section {
               font-size: 24px;
               text-transform: uppercase;
               color: $color-eleveth;
-              font-weight: 300;
               th {
                 border-bottom: 1px solid $color-primary;
+                min-width: 150px;
               }
             }
             tbody {
               transform: translateY(30px);
               font-size: 20px;
-              th {
-                a {
-                  position: relative;
-                  font-family: $font-sixth;
-                  color: black;
-                  width: 100%;
-                  font-size: 20px;
-                  font-weight: 400;
-                  display: block;
-                  min-width: 310px;
-                  padding: 1.2rem 0;
-                  transition: all 0.2s ease-in-out;
-                  &:hover {
-                    color: $color-eleveth;
+              tr {
+                font-family:$font-third;
+                transition: all 0.2s ease-out;
+                &:hover {
+                  font-family:$font-fifth;
+                  a {
+                    font-family:$font-fifth;
                   }
                 }
-              }
-              td {
-                vertical-align: middle;
-                span {
-                  padding: 1.2rem 0;
+                th {
+                  a {
+                    position: relative;
+                    font-family: $font-sixth;
+                    color: black;
+                    width: 100%;
+                    font-size: 20px;
+                    display: block;
+                    min-width: 310px;
+                    padding: 1.25rem 0;
+                    transition: all 0.2s ease-in-out;
+                    &:hover {
+                      font-family:$font-fifth;
+                      color: $color-primary;
+                    }
+                  }
+                }
+                td {
+                  vertical-align: middle;
+                  span {
+                    padding: 1.25rem 0;
+                  }
                 }
               }
             }
