@@ -1737,6 +1737,71 @@ section .b--article {
           left: -102px; }
         section .b--article .b--front-half .b--info__slider--nav.b--info__slider--nav--right:hover {
           right: -102px; }
+    section .b--article .b--front-half .b--info__search .dropdown {
+      margin-bottom: 40px; }
+      section .b--article .b--front-half .b--info__search .dropdown .dropdown-toggle {
+        position: relative;
+        font-size: 17px;
+        text-align: left;
+        padding: 20px 20px 20px 40px;
+        border-color: #A2CCE2;
+        background: none;
+        width: 100%; }
+        section .b--article .b--front-half .b--info__search .dropdown .dropdown-toggle::after {
+          content: "";
+          position: absolute;
+          display: inline-block;
+          right: 28px;
+          width: 14px;
+          height: 14px;
+          border-top: 1px solid #A2CCE2;
+          border-right: 1px solid #A2CCE2;
+          border-left: none;
+          border-bottom: none;
+          -webkit-transform: rotate(135deg);
+          transform: rotate(135deg); }
+    section .b--article .b--front-half .b--info__search .table {
+      font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
+      font-weight: 900;
+      letter-spacing: .05rem;
+      text-align: left;
+      -webkit-transform: translateY(10px);
+      transform: translateY(10px); }
+      section .b--article .b--front-half .b--info__search .table td, section .b--article .b--front-half .b--info__search .table th {
+        padding: 0;
+        border-top: none; }
+      section .b--article .b--front-half .b--info__search .table caption {
+        display: none; }
+      section .b--article .b--front-half .b--info__search .table thead {
+        font-family: "Stellar-light", Arial, Sans-Serif;
+        font-size: 24px;
+        text-transform: uppercase;
+        color: #B3B3B3;
+        font-weight: 300; }
+        section .b--article .b--front-half .b--info__search .table thead th {
+          border-bottom: 1px solid #A2CCE2; }
+      section .b--article .b--front-half .b--info__search .table tbody {
+        -webkit-transform: translateY(30px);
+        transform: translateY(30px);
+        font-size: 20px; }
+        section .b--article .b--front-half .b--info__search .table tbody th a {
+          position: relative;
+          font-family: "Avenir-Book", Arial, Sans-Serif;
+          color: black;
+          width: 100%;
+          font-size: 20px;
+          font-weight: 400;
+          display: block;
+          min-width: 310px;
+          padding: 1.2rem 0;
+          -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out; }
+          section .b--article .b--front-half .b--info__search .table tbody th a:hover {
+            color: #B3B3B3; }
+        section .b--article .b--front-half .b--info__search .table tbody td {
+          vertical-align: middle; }
+          section .b--article .b--front-half .b--info__search .table tbody td span {
+            padding: 1.2rem 0; }
   section .b--article .b--front-half .b--image-artwork {
     opacity: 1;
     -webkit-transform: none;

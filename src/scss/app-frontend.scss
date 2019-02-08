@@ -1449,6 +1449,84 @@ section {
 
           }
         }
+        &__search {
+          .dropdown {
+            margin-bottom: 40px;
+            .dropdown-toggle {
+              position: relative;
+              font-size: 17px;
+              text-align: left;
+              padding: 20px 20px 20px 40px;
+              border-color: $color-primary;
+              background: none;
+              width: 100%;
+              &::after {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                right: 28px;
+                width: 14px;
+                height: 14px;
+                border-top: 1px solid $color-primary;
+                border-right: 1px solid $color-primary;
+                border-left: none;
+                border-bottom: none;
+                transform: rotate(135deg);
+              }
+            }
+          }
+          .table {
+            font-family: $font-third;
+            font-weight: 900;
+            letter-spacing: .05rem;
+            text-align: left;
+            transform: translateY(10px);
+            & td, & th {
+              padding: 0;
+              border-top: none;
+            }
+            caption {
+              display: none;
+            }
+            thead {
+              font-family: $font-primary;
+              font-size: 24px;
+              text-transform: uppercase;
+              color: $color-eleveth;
+              font-weight: 300;
+              th {
+                border-bottom: 1px solid $color-primary;
+              }
+            }
+            tbody {
+              transform: translateY(30px);
+              font-size: 20px;
+              th {
+                a {
+                  position: relative;
+                  font-family: $font-sixth;
+                  color: black;
+                  width: 100%;
+                  font-size: 20px;
+                  font-weight: 400;
+                  display: block;
+                  min-width: 310px;
+                  padding: 1.2rem 0;
+                  transition: all 0.2s ease-in-out;
+                  &:hover {
+                    color: $color-eleveth;
+                  }
+                }
+              }
+              td {
+                vertical-align: middle;
+                span {
+                  padding: 1.2rem 0;
+                }
+              }
+            }
+          }
+        }
       }
       .b--image-artwork {
         opacity: 1;
