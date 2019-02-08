@@ -1452,6 +1452,19 @@ section {
         &__search {
           .dropdown {
             margin-bottom: 40px;
+            &.open {
+              background-color: $color-sixth;
+              .dropdown-toggle {
+                &::after {
+                  transform: rotate(-45deg);
+                  top: 27px;
+                }
+              }
+            }
+            &:focus {
+              outline: 0;
+              box-shadow: 0;
+            }
             .dropdown-toggle {
               position: relative;
               font-size: 17px;
@@ -1471,7 +1484,23 @@ section {
                 border-right: 1px solid $color-primary;
                 border-left: none;
                 border-bottom: none;
-                transform: rotate(135deg);
+                transform: rotate(135deg) ;
+                transition: all 0.1s ease-out;
+              }
+            }
+            .dropdown-menu {
+              width: 100%;
+              top: 64px;
+              border-radius: 0;
+              background-color: $color-tenth;
+              border: 1px solid $color-primary;
+              border-top: none;
+              padding: 0;
+              .dropdown-item {
+                padding: 1.25rem 1.5rem;
+                color: $color-primary;
+                border-top: 1px solid $color-primary;
+                border-radius: 0;
               }
             }
           }

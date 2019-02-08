@@ -1739,6 +1739,16 @@ section .b--article {
           right: -102px; }
     section .b--article .b--front-half .b--info__search .dropdown {
       margin-bottom: 40px; }
+      section .b--article .b--front-half .b--info__search .dropdown.open {
+        background-color: #F6F6F6; }
+        section .b--article .b--front-half .b--info__search .dropdown.open .dropdown-toggle::after {
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+          top: 27px; }
+      section .b--article .b--front-half .b--info__search .dropdown:focus {
+        outline: 0;
+        -webkit-box-shadow: 0;
+        box-shadow: 0; }
       section .b--article .b--front-half .b--info__search .dropdown .dropdown-toggle {
         position: relative;
         font-size: 17px;
@@ -1759,7 +1769,22 @@ section .b--article {
           border-left: none;
           border-bottom: none;
           -webkit-transform: rotate(135deg);
-          transform: rotate(135deg); }
+          transform: rotate(135deg);
+          -webkit-transition: all 0.1s ease-out;
+          transition: all 0.1s ease-out; }
+      section .b--article .b--front-half .b--info__search .dropdown .dropdown-menu {
+        width: 100%;
+        top: 64px;
+        border-radius: 0;
+        background-color: #F1F1F1;
+        border: 1px solid #A2CCE2;
+        border-top: none;
+        padding: 0; }
+        section .b--article .b--front-half .b--info__search .dropdown .dropdown-menu .dropdown-item {
+          padding: 1.25rem 1.5rem;
+          color: #A2CCE2;
+          border-top: 1px solid #A2CCE2;
+          border-radius: 0; }
     section .b--article .b--front-half .b--info__search .table {
       font-family: "AvenirNext-UltraLight", Arial, Sans-Serif;
       font-weight: 900;
