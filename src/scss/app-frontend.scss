@@ -71,17 +71,15 @@ $break-xs: 400px;
 // general rules
 a:focus {outline: none;}
 img {max-width: 100%;}
+/* scrollbar */
+::-webkit-scrollbar {width: 15px;}
+::-webkit-scrollbar-track {box-shadow: none;border-radius: 0;background: $color-nineth;}
+::-webkit-scrollbar-thumb {background: $color-primary;border-radius: 0;}
 // backgrounds
 .bg-third {background-color: $color-third;}
 .bg-fifth {background-color: $color-fifth;}
 .bg-sixth {background-color: $color-sixth;}
 .bg-tenth {background-color: $color-tenth;}
-/* scrollbar */
-::-webkit-scrollbar {width: 15px;}
-::-webkit-scrollbar-track {box-shadow: none;border-radius: 0;background: $color-nineth;}
-::-webkit-scrollbar-thumb {background: $color-primary;border-radius: 0;}
-
-
 
 
 // buttons
@@ -185,14 +183,8 @@ a, .btn {
 
 // Animations
 @keyframes sonar {
-  0% {
-    -webkit-box-shadow: 0 0 0 10px rgba(255,255,255,0.1);
-    box-shadow: 0 0 0 10px rgba(255,255,255,0.1);
-  }
-  0% {
-    -webkit-box-shadow: 0 0 0 0px rgba(255,255,255,0.1);
-    box-shadow: 0 0 0 0px rgba(255,255,255,0.1);
-  }
+  0% {box-shadow: 0 0 0 10px rgba(255,255,255,0.1);}
+  0% {box-shadow: 0 0 0 0px rgba(255,255,255,0.1);}
 }
 // animation nav hover desktop
 @keyframes cloudhover {
@@ -348,12 +340,14 @@ a, .btn {
   // logo
   .b-ameri {
     &__brand {
+      position: relative;
       display: inline-block;
       height: 71px;
       padding-left: 66px;
       line-height: 70px;
       padding-right: 32px;
       border-right: 2px solid #D8D8D8;
+      z-index: 10000;
       @media all and (max-width: $break-lg){
         width: 170px;
         height: 48px;
@@ -545,14 +539,22 @@ a, .btn {
     &__menu.is-active {
       width: 33.33333%;
       @media all and (max-width: $break-lg){
-        width: 40%;
+        width: 50%;
       }
       @media all and (max-width: $break-md){
         width: 100%;
       }
       .b--header__menu-list {
         opacity: 1;
-        right: 70px;
+        right: 40px;
+        @media all and (max-width: $break-xl){
+          right: 50px;
+        }
+        @media all and (max-width: $break-lg){
+          width: 100%;
+          right: 0;
+          padding: 0 10%;
+        }
         li {
           transform: translateX(0px);
           &:nth-child(1) {
@@ -1433,6 +1435,7 @@ section {
           }
         }
         &__slider {
+          position: relative;
           margin: 40px 0;
           &--wrapper, {
             text-align: center;

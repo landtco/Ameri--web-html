@@ -38,18 +38,6 @@ a:focus {
 img {
   max-width: 100%; }
 
-.bg-third {
-  background-color: #1C1D1F; }
-
-.bg-fifth {
-  background-color: #151517; }
-
-.bg-sixth {
-  background-color: #F6F6F6; }
-
-.bg-tenth {
-  background-color: #F1F1F1; }
-
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 15px; }
@@ -63,6 +51,18 @@ img {
 ::-webkit-scrollbar-thumb {
   background: #A2CCE2;
   border-radius: 0; }
+
+.bg-third {
+  background-color: #1C1D1F; }
+
+.bg-fifth {
+  background-color: #151517; }
+
+.bg-sixth {
+  background-color: #F6F6F6; }
+
+.bg-tenth {
+  background-color: #F1F1F1; }
 
 a, .btn {
   font-family: "Avenir-Heavy", Arial, Sans-Serif;
@@ -703,12 +703,14 @@ a, .btn {
         -ms-flex-wrap: nowrap;
         flex-wrap: nowrap; } }
   .b--header .b-ameri__brand {
+    position: relative;
     display: inline-block;
     height: 71px;
     padding-left: 66px;
     line-height: 70px;
     padding-right: 32px;
-    border-right: 2px solid #D8D8D8; }
+    border-right: 2px solid #D8D8D8;
+    z-index: 10000; }
     @media all and (max-width: 960px) {
       .b--header .b-ameri__brand {
         width: 170px;
@@ -881,13 +883,21 @@ a, .btn {
     width: 33.33333%; }
     @media all and (max-width: 960px) {
       .b--header__menu.is-active {
-        width: 40%; } }
+        width: 50%; } }
     @media all and (max-width: 720px) {
       .b--header__menu.is-active {
         width: 100%; } }
     .b--header__menu.is-active .b--header__menu-list {
       opacity: 1;
-      right: 70px; }
+      right: 40px; }
+      @media all and (max-width: 1140px) {
+        .b--header__menu.is-active .b--header__menu-list {
+          right: 50px; } }
+      @media all and (max-width: 960px) {
+        .b--header__menu.is-active .b--header__menu-list {
+          width: 100%;
+          right: 0;
+          padding: 0 10%; } }
       .b--header__menu.is-active .b--header__menu-list li {
         -webkit-transform: translateX(0px);
         transform: translateX(0px); }
@@ -1722,6 +1732,7 @@ section .b--article {
       section .b--article .b--front-half .b--info ul li::before {
         color: #0A3378; }
     section .b--article .b--front-half .b--info__slider {
+      position: relative;
       margin: 40px 0; }
       section .b--article .b--front-half .b--info__slider--wrapper {
         text-align: center; }
